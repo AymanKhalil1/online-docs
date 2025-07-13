@@ -1,0 +1,382 @@
+<!DOCTYPE css>
+<css>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+<style>
+h1,h3{color: black}
+p{color: black}
+*Zoom in*/
+.zoom {
+  transition: transform .2s;
+}
+body {
+  font-family: Arial;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+a { text-decoration: none; color: black}
+
+
+li,h3,p,h1,tr{text-align:left;}
+
+.container p{font-size:0.9vw;
+}
+p{font-size:18px;
+}
+
+
+.zoom:hover {
+  -ms-transform: scale(1.3); /* IE 9 */
+  -webkit-transform: scale(1.3); /* Safari 3-8 */
+  transform: scale(1.3);
+}
+.zoom2 {
+  transition: transform .1s;
+}
+
+.zoom2:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+
+
+/*Side navigation*/
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 15px;
+}
+
+
+.sidenav a ,.dropdown-btn {
+  padding: 8px 8px 8px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.sidenav a:hover,.dropdown-btn  {
+  color: #f1f1f1;
+}
+.sidenav li {color: #818181;}
+
+.sidenav .closebtn {
+  position: right;
+  top: 0;
+  right: 25px;
+  font-size: 30px;
+  margin-left: 250px;
+}
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: grey;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #111;
+  padding-left: 8px;
+}
+
+
+#main #light .main{
+  transition: margin-left .5s;
+  padding: 10px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/*popup video lightbox start*/
+#fade {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+
+
+#light {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 70%;
+  max-height: 60%;
+  margin-left: -35%;
+  margin-top: -20%;
+  z-index: 1002;
+  overflow: visible;
+}
+.boxclose {
+  float: right;
+  cursor:auto;
+  color: #a6a6a6;
+  border-radius: 1px;
+  background: #f2f2f2;
+  font-size: 31px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1px;
+  padding: 11px 2px;
+  position:absolute;
+  right: 1px;
+  top: 12px;
+  z-index: 1002;
+  opacity: 0.7;
+
+}
+
+.boxclose:before {
+  content: "x";
+}
+.boxclose:hover,
+.boxclose:focus {
+  color: #000000;
+  cursor: pointer;
+}
+#fade:hover ~ #boxclose {
+  display:none;
+}
+
+.test:hover ~ .test2 {
+  display: none;
+}
+
+#Hey
+    {
+      position:absolute;
+      top: 15%;
+      left:40%;
+    }
+li,h3,p,h1,h2,tr{text-align:left;color:black}
+/*popup video lightbox end*/
+
+
+/*Menus start*/
+
+body {
+  font-family: Arial;
+
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+ h2{font-size: 3vw; text-align: center;}
+
+
+
+
+ @media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+
+  }
+}
+
+
+
+/* Set height of body and the document to 100% */
+body, html {
+    font-family: Arial;
+  height: 100%;
+  padding-left: 140px;
+  color:black;
+  font-size:1.0vw;
+}
+
+
+  a { text-decoration: none; color: black}
+
+div  {
+
+  text-align: center;
+  padding: 10px 0 ;
+  font-size: 20px;
+}
+li,h3,p,h1,h2,tr{text-align:left;color:black}
+
+
+h1,h3{color: black}
+p{color: black}
+/*Zoom in*/
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.3); /* IE 9 */
+  -webkit-transform: scale(1.3); /* Safari 3-8 */
+  transform: scale(1.3);
+}
+.zoom2 {
+  transition: transform .1s;
+}
+
+.zoom2:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+/*Side navigation*/
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 15px;
+  margin-right: 100px;
+}
+
+
+.sidenav a ,.dropdown-btn {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.sidenav a:hover,.dropdown-btn  {
+  color: #f1f1f1;
+}
+.sidenav li {color: #818181;}
+
+.sidenav .closebtn {
+  position: right;
+  top: 0;
+  right: 25px;
+  font-size: 30px;
+  margin-left: 250px;
+}
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: grey;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #111;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+
+#main {
+  transition: margin-left .5s;
+
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+
+ @media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+
+/* trial in Between */
+</style>

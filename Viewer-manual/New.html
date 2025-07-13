@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Features</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.bundle.js"></script>
+  
+  
+  <style>
+    
+    
+    .zoom {
+      transition: transform .2s;
+    }
+    
+    .zoom:hover {
+      -ms-transform: scale(1.15); /* IE 9 */
+      -webkit-transform: scale(1.15); /* Safari 3-8 */
+      transform: scale(1.15);}
+      
+      
+      b{color: grey;}
+      .accordion-button{font-size: 20px;}
+      .icon{width:30px; 
+        height:30px;}
+        .sub1{margin-left: 10px;}
+        .sub2{margin-left: 20px;}
+        
+        img{
+          cursor: pointer;
+        }
+        .btn-bd-secondary {
+          --bs-btn-font-weight: 400;
+          --bs-btn-font-size: 30px;
+          /* --bs-btn-font-weight: 600; */
+          --bs-btn-color: var(--bs-black);
+          --bs-btn-bg: var(--bd-violet); 
+          --bs-btn-border-color: var(--bd-violet);
+          /*--bs-btn-border-radius: .5rem; 
+          --bs-btn-hover-color: var(--bs-white);
+          --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)}; */
+          --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+          --bs-btn-active-color: var(--bs-btn-hover-color);
+          --bs-btn-active-bg: #{shade-color($bd-violet, 20%)}; 
+          --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+        }
+        .btn-bd-primary {
+          --bs-btn-font-weight: 600;
+          --bs-btn-color: var(--bs-white);
+          --bs-btn-bg: var(--bd-violet);
+          --bs-btn-border-color: var(--bd-violet);
+          --bs-btn-border-radius: .5rem;
+          --bs-btn-hover-color: var(--bs-white);
+          --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+          --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+          --bs-btn-active-color: var(--bs-btn-hover-color);
+          --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+          --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+        }
+        
+        [class*="col"]{
+          padding: 1rem;
+        }
+        p, li{font-size:18px}
+        a{color:black;
+          text-decoration: none;}
+          .shadow {
+            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+          }
+          
+          .bg-mint { background-color: #54d1e3;}
+          .border-mint { border-color: #36bded;}
+          .link:hover{color:  #54d1e3;}
+          a:hover{color:  #54d1e3;}
+          .button:hover {color:  black; }
+          
+          .timeline {
+            list-style: none;
+            padding: 20px 0 20px;
+            position: relative;
+          }
+          
+          .timeline:before {
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 3px;
+            background-color: #eeeeee;
+            left: 50%;
+            margin-left: -1.5px;
+          }
+          
+          .timeline > li {
+            margin-bottom: 20px;
+            position: relative;
+          }
+          
+          .timeline > li:before,
+          .timeline > li:after {
+            content: " ";
+            display: table;
+          }
+          
+          .timeline > li:after {
+            clear: both;
+          }
+          
+          .timeline > li:before,
+          .timeline > li:after {
+            content: " ";
+            display: table;
+          }
+          
+          .timeline > li:after {
+            clear: both;
+          }
+          
+          .timeline > li > .timeline-panel {
+            width: 46%;
+            float: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 2px;
+            padding: 20px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+          }
+          
+          .timeline > li > .timeline-panel:before {
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            display: inline-block;
+            border-top: 15px solid transparent;
+            border-left: 15px solid #ccc;
+            border-right: 0 solid #ccc;
+            border-bottom: 15px solid transparent;
+            content: " ";
+          }
+          
+          .timeline > li > .timeline-panel:after {
+            position: absolute;
+            top: 27px;
+            right: -14px;
+            display: inline-block;
+            border-top: 14px solid transparent;
+            border-left: 14px solid #fff;
+            border-right: 0 solid #fff;
+            border-bottom: 14px solid transparent;
+            content: " ";
+          }
+          
+          .timeline > li > .timeline-badge {
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: #999999;
+            z-index: 100;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+          }
+          
+          .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+          }
+          
+          .timeline > li.timeline-inverted > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+          }
+          
+          .timeline > li.timeline-inverted > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+          }
+          
+          .timeline-badge.primary {
+            background-color: #2e6da4 !important;
+          }
+          
+          .timeline-badge.success {
+            background-color: #3f903f !important;
+          }
+          
+          .timeline-badge.warning {
+            background-color: #f0ad4e !important;
+          }
+          
+          .timeline-badge.danger {
+            background-color: #d9534f !important;
+          }
+          
+          .timeline-badge.info {
+            background-color: #5bc0de !important;
+          }
+          
+          .timeline-title {
+            margin-top: 0;
+            color: inherit;
+          }
+          
+          .timeline-body > p,
+          .timeline-body > ul {
+            margin-bottom: 0;
+          }
+          
+          .timeline-body > p + p {
+            margin-top: 5px;}
+            
+            .icon{width:30px; 
+              height:30px;
+              margin-top: -10px;}
+              
+            </style>
+          </head>
+          <body>
+            <div class="container  mt-5 mb-5 ">
+              <!-------------------------------------------------------------------- navigation --------------------------------------------------------------------------->
+              
+              <nav class="navbar bg-white ">
+
+                <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" 
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"> Viewer Manual's Navigation
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end bg-white" tabindex="-1" id="offcanvasNavbar" 
+                aria-labelledby="offcanvasNavbarLabel">
+                <!------------------------------------------ Header ------------------------------------------------>
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Viewer Manual </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <!------------------------------------------ Body ------------------------------------------------>
+                    
+                        <!-- <li class="nav-item">
+                          <a class="nav-link" href="Home.html">Viewer's Home</a>
+                        </li> -->
+                        <li class="nav-item dropdown ">
+                          <a class="nav-link dropdown-toggle" href="" 
+                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Why ELS' Viewer?
+                          </a>
+                        
+            
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Home.html#A1">Why ELS?</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+            
+                            <li><a class="dropdown-item" href="Home.html#A1">Most Notable Features</a></li>
+                            <li><a class="dropdown-item " href="New.html">What's New in V10?</a></li>
+            
+                          </ul>
+                        </li>
+          
+                        
+                        <li class="nav-item">
+                          <a class="nav-link " href="Home.html#A2">Before You Start</a>
+                        </li>
+          
+                                <!------------------------------------------ Finding Your Way Through ELS ------------------------------------------------>
+          
+                      <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="" 
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Finding Your Way Through ELS
+                        </a>
+                      
+          
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="Home.html#A3">How to find your way?</a></li>
+                          <li><a class="dropdown-item" href="Home.html#A3">Springs</a></li>
+                          <li><a class="dropdown-item" href="Home.html#A3">Elements</a></li>
+                          <li><a class="dropdown-item" href="Home.html#A3">Frames</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+          
+                          <li><a class="dropdown-item " href="WorkSpace.html">Viewer Workspace</a></li>
+                          <ul style="list-style: none;">
+                              <li ><a class="dropdown-item " href="WorkSpace.html#A1">&#10551;&nbsp Menus</a></li>
+                              <li ><a class="dropdown-item " href="WorkSpace.html#A2">&#10551;&nbsp Browsers</a></li>
+                              </ul>
+                          <li><a class="dropdown-item " href="BasicFeatures.html">Basic Features</a></li>
+                          <ul style="list-style: none;">
+                            <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Model Navigation</a></li>
+                            <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Display</a></li>
+                            <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Markers</a></li>
+          
+                            </ul>
+                          <li><a class="dropdown-item " href="ViewerSpecialities.html">Viewer's Specialties</a></li>
+                          <ul style="list-style: none;">
+                            <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Advanced Options</a></li>
+                            <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Charts</a></li>
+                            <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Contours</a></li>
+                            <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Straining Actions</a></li>
+                            <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Eigen Analysis</a></li>
+                            </ul>
+          
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="Home.html#A4" 
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Technical Support
+                        </a>
+                      
+          
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="Home.html#A4">Technical Support</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+          
+                          <li><a class="dropdown-item " href="Home.html#A4">Service & Support</a></li>
+                          <li><a class="dropdown-item " href="Home.html#A4">Contact Technical Support</a></li>
+                          <li><a class="dropdown-item " href="Home.html#A4">Contact ASI</a></li>
+                          
+          
+          
+          
+                  </div>
+                </div>
+             
+          
+          
+            </nav>
+          
+          
+          
+          
+          
+          
+          <!---------------------------------------------------- Main Body ------------------------------------------------------------->
+          
+          <h1 >Version 10's New Features</h1>
+          
+          
+                
+          <div class="card-group p-3" style="width: 100%;">
+            
+            <!--------------------------------------------------------------------------- Camera Manager --------------------------------------------------------------------->
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Camera Manager</h5>
+                <p class = "title">Results Viewer</p>
+                <p class="card-text">Using the Perspective Camera Manager to tour your model and note important views.</p>
+              </div>
+              <div class="card-footer">
+                <a href="CameraManager.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            
+            <!--------------------------------------------------------------------------- 8-Node Regions --------------------------------------------------------------------->
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">8-Node Regions</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Defining 8-Node Regions for preprocessing actions</p>
+              </div>
+              <div class="card-footer">
+                <a href="Regions.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            <!--------------------------------------------------------------------------- Lumped Mass --------------------------------------------------------------------->
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Lumped Mass</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Applying a lumped mass to a group of elements in a region</p>
+              </div>
+              <div class="card-footer">
+                <a href="LumpedMass.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="card-group p-3">
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Edit Materials</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Change the material for specific element groups</p>
+              </div>
+              <div class="card-footer">
+                <a href="editMaterials.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Springs Controller</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Apply actions to springs at any point in the simulation timeline</p>
+              </div>
+              <div class="card-footer">
+                <a href="springController.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Demolish/Construct Scenario</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Designate element groups for demolition or construction</p>
+              </div>
+              <div class="card-footer">
+                <a href="demolish-construct.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-group p-3">
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Element Springs</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Redefine the number of springs per face for specific element groups</p>
+              </div>
+              <div class="card-footer">
+                <a href="elementSprings.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Rigid Body</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Assign element groups to a rigid body</p>
+              </div>
+              <div class="card-footer">
+                <a href="rigidBody.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Lumped Damping</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Assign a lumped damping effect over element groups</p>
+              </div>
+              <div class="card-footer">
+                <a href="LumpedDamping.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class = "card-group p-3">
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Spring Filters</h5>
+                <p class = "title">Results Viewer</p>
+                <p class="card-text">Apply advanced filtering options to springs</p>
+              </div>
+              <div class="card-footer">
+                <a href="springFilters.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Element Filters</h5>
+                <p class = "title">Results Viewer</p>
+                <p class="card-text">Apply filters to better view element groups under specific conditions</p>
+              </div>
+              <div class="card-footer">
+                <a href="elementFilters.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Contact Filters</h5>
+                <p class = "title">Results Viewer</p>
+                <p class="card-text">View contact occurences between elements under specific conditions</p>
+              </div>
+              <div class="card-footer">
+                <a href="contactFilters.html" class="btn btn-dark">Learn More</a>
+              </div>
+              
+              
+            </div>
+            
+          
+            
+          </div>
+          
+          
+          <div class="card-group p-3">
+
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Straining Actions Filters</h5>
+                <p class = "title">Results Viewer</p>
+                <p class="card-text">Filter straining actions on element groups under specific conditions</p>
+              </div>
+              <div class="card-footer">
+                <a href="strainingActionsFilters.html" class="btn btn-dark">Learn More</a>
+              </div>
+              
+            </div>
+            
+            
+           
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Contours</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Visualize stresses, strains, displacements, and pressures for the entire problem.</p>
+              </div>
+              <div class="card-footer">
+                <a href="contours.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Equations</h5>
+                <p class = "title">Viewer</p>
+                <p class="card-text">Add elements properties to more complex expressions</p>
+              </div>
+              <div class="card-footer">
+                <a href="equations.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-group p-3">
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Motion Path</h5>
+                <p class = "title">Viewer and Modeler</p>
+                <p class="card-text">Create a customized camera tour of your project and export it to images and video.</p>
+              </div>
+              <div class="card-footer">
+                <a href="./motionPath.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Select by Region</h5>
+                <p class = "title">Modeler and Viewer</p>
+                <p class="card-text">Select elements enclosed in a region.</p>
+              </div>
+              <div class="card-footer">
+                <a href="./select-by-region.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Select by Draft</h5>
+                <p class = "title">Modeler and Viewer</p>
+                <p class="card-text">Select elements using a draft object</p>
+              </div>
+              <div class="card-footer">
+                <a href="./select-by-draft.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="card-group p-3">
+           
+              <div class="card m-2 border shadow">
+                <img src="./New Features/Images/Basic.png" class="card-img-top">
+                <h4 class="text-center">V10's New Features</h4>
+                <div class="card-body">
+                  <h5 class="card-title">Charts Options, Import & Export Charts</h5>
+                  <p class = "title">Viewer</p>
+                  <p class="card-text">Plot new data types in charts. Import and export multiple charts in one go.</p>
+                </div>
+                <div class="card-footer">
+                  <a href="./charts-options.html" class="btn btn-dark">Learn More</a>
+                </div>
+              </div>
+
+              <div class="card m-2 border shadow">
+                <img src="./New Features/Images/Basic.png" class="card-img-top">
+                <h4 class="text-center">V10's New Features</h4>
+                <div class="card-body">
+                  <h5 class="card-title">Collective Images</h5>
+                  <p class = "title">Viewer</p>
+                  <p class="card-text">Export output frames overlayed onto one image.</p>
+                </div>
+                <div class="card-footer">
+                  <a href="./collective-images.html" class="btn btn-dark">Learn More</a>
+                </div>
+              </div>
+
+              <div class="card m-2 border shadow">
+                <img src="./New Features/Images/Basic.png" class="card-img-top">
+                <h4 class="text-center">V10's New Features</h4>
+                <div class="card-body">
+                  <h5 class="card-title">Drawing and Text Properties</h5>
+                  <p class = "title">Modeler and Viewer</p>
+                  <p class="card-text">Control the drawing and text properties for visual indicators of groups in preprocessing or loading scenarios.</p>
+                </div>
+                <div class="card-footer">
+                  <a href="./text-and-drawing-options.html" class="btn btn-dark">Learn More</a>
+                </div>
+              </div>
+            
+          </div>
+          <div class="card-group p-3">
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Contours for Eigen Modes</h5>
+                <p class = "title">Viewer</p>
+                <p class="card-text">Draw contours for eigen modes.</p>
+              </div>
+              <div class="card-footer">
+                <a href="./eigen-contours.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Chart from filter</h5>
+                <p class = "title">Viewer</p>
+                <p class="card-text">Plot a chart for straining actions or displacements from a preexisting filter</p>
+              </div>
+              <div class="card-footer">
+                <a href="chartfromfilter.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+
+            <div class="card m-2 border shadow">
+              <img src="./New Features/Images/Basic.png" class="card-img-top" alt="...">
+              <h4 class="text-center">V10's New Features</h4>
+              <div class="card-body">
+                <h5 class="card-title">Nails</h5>
+                <p class = "title">Modeler</p>
+                <p class="card-text">Quickly generate nails on faces and interfaces of components </p>
+              </div>
+              <div class="card-footer">
+                <a href="nails.html" class="btn btn-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+        </div> <!--End Cards-->
+        
+        
+        
+        
+      </div>
+      
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+          var element = document.getElementById("myToast");
+          var myToast = new bootstrap.Toast(element, {
+            delay: 10000
+          });
+        });
+      </script>
+      <script>
+        
+        var vid1 = document.getElementById(" Video"); 
+        function playVid1() { 
+          vid1.play();} 
+          function pauseVid1() { 
+            vid1.pause();} 
+            
+            
+            var vid2 = document.getElementById(" Video2");   
+            function playVid2() { 
+              vid2.play();} 
+              function pauseVid2() { 
+                vid2.pause();} 
+                
+                
+                
+                var vid3 = document.getElementById(" Video3"); 
+                function playVid3() { 
+                  vid3.play();} 
+                  function pauseVid3() { 
+                    vid3.pause();} 
+                    
+                    
+                    var vid4 = document.getElementById(" Video4"); 
+                    function playVid4() { 
+                      vid4.play(); } 
+                      function pauseVid4() { 
+                        vid4.pause();} 
+                        
+                        var vid5 = document.getElementById(" Video5"); 
+                        function playVid5() { 
+                          vid5.play(); } 
+                          function pauseVid5() { 
+                            vid5.pause();} 
+                            
+                            var vid6 = document.getElementById(" Video6"); 
+                            function playVid6() { 
+                              vid6.play(); } 
+                              function pauseVid6() { 
+                                vid6.pause();}  
+                                
+                                
+                                
+                                // ///////////////////////////////Next Section/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                
+                                var vid21 = document.getElementById(" Video21"); 
+                                function playVid21() { 
+                                  vid21.play(); } 
+                                  function pauseVid21() { 
+                                    vid21.pause();} 
+                                    
+                                    
+                                    var vid22 = document.getElementById(" Video22"); 
+                                    function playVid22() { 
+                                      vid22.play(); } 
+                                      function pauseVid22() { 
+                                        vid22.pause(); } 
+                                        
+                                        
+                                        
+                                        var vid23 = document.getElementById(" Video23"); 
+                                        function playVid23() { 
+                                          vid23.play(); } 
+                                          function pauseVid23() { 
+                                            vid23.pause(); } 
+                                            
+                                            
+                                            var vid24 = document.getElementById(" Video24"); 
+                                            function playVid24() { 
+                                              vid24.play(); } 
+                                              function pauseVid24() { 
+                                                vid24.pause(); } 
+                                                
+                                                
+                                                var vid25 = document.getElementById(" Video25"); 
+                                                function playVid25() { 
+                                                  vid25.play(); } 
+                                                  function pauseVid25() { 
+                                                    vid25.pause();} 
+                                                    
+                                                    
+                                                    var vid26 = document.getElementById(" Video26"); 
+                                                    function playVid26() { 
+                                                      vid26.play(); } 
+                                                      function pauseVid26() { 
+                                                        vid26.pause(); } 
+                                                        
+                                                        
+                                                        var vid27 = document.getElementById(" Video27"); 
+                                                        function playVid27() { 
+                                                          vid27.play();} 
+                                                          function pauseVid27() { 
+                                                            vid27.pause();} 
+                                                            
+                                                            
+                                                            
+                                                            var vid31 = document.getElementById(" Video31"); 
+                                                            function playVid31() { 
+                                                              vid31.play(); } 
+                                                              function pauseVid31() { 
+                                                                vid31.pause();} 
+                                                                
+                                                                
+                                                                var vid32 = document.getElementById(" Video32"); 
+                                                                function playVid32() { 
+                                                                  vid32.play(); } 
+                                                                  function pauseVid32() { 
+                                                                    vid32.pause(); } 
+                                                                    
+                                                                    
+                                                                    
+                                                                    var vid33 = document.getElementById(" Video33"); 
+                                                                    function playVid33() { 
+                                                                      vid33.play(); } 
+                                                                      function pauseVid33() { 
+                                                                        vid33.pause(); } 
+                                                                        
+                                                                        var vid221 = document.getElementById(" Video221"); 
+                                                                        function playVid221() { 
+                                                                          vid221.play(); } 
+                                                                          function pauseVid221() { 
+                                                                            vid221.pause(); } 
+                                                                            
+                                                                            var vid222 = document.getElementById(" Video222"); 
+                                                                            function playVid222() { 
+                                                                              vid222.play(); } 
+                                                                              function pauseVid222() { 
+                                                                                vid222.pause(); } 
+                                                                                
+                                                                                var vid223 = document.getElementById(" Video223"); 
+                                                                                function playVid223() { 
+                                                                                  vid223.play(); } 
+                                                                                  function pauseVid223() { 
+                                                                                    vid223.pause(); } 
+                                                                                    
+                                                                                    var vid224 = document.getElementById(" Video224"); 
+                                                                                    function playVid224() { 
+                                                                                      vid224.play(); } 
+                                                                                      function pauseVid224() { 
+                                                                                        vid224.pause(); } 
+                                                                                        
+                                                                                        
+                                                                                        // Get the modals
+                                                                                        var modalA = document.getElementById('exampleModal1');
+                                                                                        var modal = document.getElementById('exampleModal2');
+                                                                                        var modal1 = document.getElementById('exampleModal3');
+                                                                                        var modal2 = document.getElementById('exampleModal4');
+                                                                                        var modal3 = document.getElementById('exampleModal5');
+                                                                                        var modal4 = document.getElementById('exampleModal6');
+                                                                                        
+                                                                                        
+                                                                                        var modalA2 = document.getElementById('exampleModal21');
+                                                                                        var modal21 = document.getElementById('exampleModal22');
+                                                                                        var modal22 = document.getElementById('exampleModal23');
+                                                                                        var modal23 = document.getElementById('exampleModal24');
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        var modalA3 = document.getElementById('exampleModal31');
+                                                                                        var modal31 = document.getElementById('exampleModal32');
+                                                                                        var modal32 = document.getElementById('exampleModal33');
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        // When the user clicks anywhere outside of the modal, close it
+                                                                                        window.onclick = function(event) {
+                                                                                          //alert(event.target)
+                                                                                          if (event.target == modal) {
+                                                                                            vid2.pause();
+                                                                                          } 
+                                                                                          if(event.target == modalA) {
+                                                                                            vid1.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal1) {
+                                                                                            vid3.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal2) {
+                                                                                            vid4.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal3) {
+                                                                                            vid5.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal4) {
+                                                                                            vid6.pause();     
+                                                                                          }
+                                                                                          
+                                                                                          
+                                                                                          if (event.target == modalA2) {
+                                                                                            vid21.pause();
+                                                                                          } 
+                                                                                          if(event.target == modal21) {
+                                                                                            vid22.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal22) {
+                                                                                            vid23.pause();     
+                                                                                          }    
+                                                                                          if(event.target == modal23) {
+                                                                                            vid24.pause();     
+                                                                                          } 
+                                                                                          
+                                                                                          
+                                                                                          if (event.target == modalA3) {
+                                                                                            vid31.pause();
+                                                                                          } 
+                                                                                          if(event.target == modal31) {
+                                                                                            vid32.pause();     
+                                                                                          }
+                                                                                          if(event.target == modal32) {
+                                                                                            vid33.pause();     
+                                                                                          }    
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                        }
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                      </script>
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                    </body>
+                                                                                    </html>
+                                                                                    

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Features</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+
+<h2 id="A1", name="A1" style="text-align:left">Model Navigation</h2>
+
+    <p style="color:#47476b;">ELS's Viewer is a state-of-the-art graphical user interface 
+      that enables you to view structural models with realistic appearance and behavior. It also provides you with
+powerful tools for analyzing simulation results and presenting them afterwards.</p>
+<h3>Pan & Zoom</h3>
+<p>
+  Panning and zooming are two operations that can help you obtain the required view of your model. 
+  Zooming achieves this through changing the magnification of the view, 
+  while panning moves the view. Both options enable you to take a closer 
+  or better look at a specific part of your structural model.
+</p>
+<div class="container">
+
+     <!-------------------------------------------------------------Pan ----------------------------------------------------------------------------------->
+<h4>Pan</h4>
+<p>
+  Panning has the effect of moving the location of the viewer window from which you look at the model. 
+  Note that it does not change the location of the model but merely changes the view - the location from which you look. 
+  Looking at Figure 4-1, what you see on the program screen on the right can be changed by moving the “virtual” window illustrated on the left using the panning “hand”.
+</p>
+<p>
+  You can activate the panning mode by clicking the button from the View toolbar or selecting Pan from the View menu. When in the panning mode, 
+  you will notice that the mouse cursor changes to a hand shape.
+After activating the panning mode, you can start to pan your view by moving your mouse in the model viewing window while  pressing the left-click mouse button. 
+When you are done, you can deactivate this mode 
+by pressing the *Esc* key on your keyboard or right-clicking in the viewing window and selecting the Cancel Navigation command.
+</p>
+<p>
+  There is a quicker way to pan your view if your mouse has a clickable scroll wheel which can be used as a third mouse button. 
+  You can pan by pressing this button while moving your mouse without having to turn on the panning mode from the toolbar or menu. 
+  When you release the scroll button you do not have to exit the mode manually as it is done automatically.
+</p> 
+   <!-------------------------------------------------------------Zoom ----------------------------------------------------------------------------------->
+<h4>Zoom</h4>
+
+<p>
+  Similar to panning, zooming is an option that can change your view of the model. 
+  It changes the drawing scale of the model on the screen, or in other words, it magnifies the view.
+  There are several zoom options in the ELS Viewer, which you can access from the View toolbar or menu. 
+  Below, their functions are explained in detail.  
+</p>
+   <!-------------------------------------------------------------3D views ----------------------------------------------------------------------------------->
+ <div>
+   <h4>3D Views</h4>
+<p>
+
+ ELS's Viewer displays models in a three dimensional (3D) view with seven preset 3D viewing directions: 
+ <p>
+  
+    <div class="row">
+      <div class="col-lg-5 col-md-7 ">
+      <img  
+      src="ViewDir.png"
+      style="height:90%;width:100%">
+         </img>
+        </div>
+
+        <div class="col-lg-7 col-md-5">
+          <ul>
+            <li class="p-3">Isometric (<img  src="Images/3D.png"></img>) </li> 
+            <li class="p-3">Front     (<img  src="Images/3D.png"></img> )</li>  
+            <li class="p-3">Back      (<img  src="Images/3D.png"></img>)</li>  
+            <li class="p-3">Right     (<img  src="Images/3D.png"></img>)</li>  
+            <li class="p-3">Left      (<img  src="Images/3D.png"></img> )</li>  
+            <li class="p-3">Top       (<img  src="Images/3D.png"></img> )</li>  
+            <li class="p-3">Bottom    (<img  src="Images/3D.png"></img>)</li> 
+              <br>
+          </ul>
+        </div>
+
+    
+ 
+            <p>
+              These different viewing directions are defined relative to the global axes: 
+            front and back for the Y-axis, right and left for the X-axis, and top and bottom for the Z-axis. 
+            <br>You can select the required view by clicking the corresponding button either from the 3D View toolbar or from View >3D View. 
+            Note that when any of these views is selected, 
+            all panning and zooming performed is reset.
+            <br>Other than the preset 3D view directions,
+              you can customize the viewing direction by dynamically rotating the model in space using commands that rotate it about the X-axis (), 
+              Y-axis ( ), and Z-axis ( ). Clicking on any of these buttons causes the mouse cursor to change its shape in the model viewer window to indicate activation of a rotation mode. 
+              To rotate the model, move your mouse around while pressing the left-button. Press the *Esc* key or Cancel Navigation from the right-click menu when you are done 
+                to exit the rotation mode.
+              <br>If you need a more flexible 3D view rotation tool, you can use the Rotate About XYZ ( ) option which enables you to rotate the model around the origin, not just one axis.
+            <br>
+            In addition to rotating the model relative to the global axes, you can rotate the model relative to the plane of your screen, about the X-axis ( ), Y-axis ( ), and Z-axis
+            (). For more flexible 3D rotation about the screen, you can use the Arc Ball Rotate option ().
+          <br> For more 3D viewing options, use the Walkthrough mode. (<strong>Add link</strong>)
+              <br> Note: Although the Rotate About XYZ tool is more flexible, it needs more experience to control.
+              It is advisable to use it after trying out the single-axis rotations just to tweak the view to your exact viewing preference.
+            </p>
+          </ul>
+   
+  </div>
+
+<hr>
+</div>
+   <!------------------------------------------------------------- Select ----------------------------------------------------------------------------------->
+<div>
+   <h3>Select</h3>
+
+<p>
+  In some cases you'll be needing to select objects; these cases include:
+  <ul>
+    <li>
+      To view detailed properties of an element or spring in the Properties browser (only possible for a single selected object). 
+      In case of markers, you can view and also edit properties of multiple selections at once. 
+      See12.613 for more details on the Properties browser and Section13 for more information on markers.
+    </li>
+    <li>
+      To show or hide a group of selected elements, which is discussed in this section.
+    </li>
+    <li>
+      To view staining actions details at a selected component section. This is done by selecting a section then choosing Component Straining Actions Details from the right-click menu. 
+      For more information on this feature refer to Chapter 10.
+    </li>
+    <li>
+      To perform some commands in ELS like creating custom components or charts, you will be required to make selections. 
+      For example, to plot a chart, you will be requested to select the elements whose data will be plotted.
+    </li>
+  </ul>
+  <p>
+  You can select any of the following types in ELS: elements ( ), springs (), link members ( ), sections ( ), markers ( ), or contact ().To select an object you must 
+  first make sure that it is displayed, or else its selection button will be disabled. 
+  To display a type of objects use the Problem Features menu or toolbar (see Chapter 6 for more details).
+   Note that you can only select objects of one type at a time.
+The action of selection itself is simply done by clicking an element if a single selection is required. If you need to make multiple selections, 
+click the mouse and drag it to draw a window over the desired elements, or keep the Ctrl (or Shift) key pressed while selecting elements to add them to the existing selection. 
+  Clicking a selected element deselects it.
+</p>
+<p>
+<strong>
+  When making a window selection, you should note that all elements within this window, including those hidden behind other elements will be selected. 
+</strong>
+<br>
+Figure shows an example of a slab selected from the top view. If it is selected by single selection, 
+i.e. select elements one by one by clicking them, just the elements visible from the top are actually selected. 
+If all the elements of the slab are selected using a window, all other slabs beneath it will also be selected.
+</p>
+<img src="Select.png" 
+
+class="img-fluid mx-auto d-block" >
+<p>
+  There are ways to select such a slab using window selection, which will save time compared to selecting all its elements one by one. 
+  One way to do that is by hiding all other levels using the Structure browser before making the selection, 
+  so that there are no elements below the slab. Another way is to hide all columns and girders then select the slab from the front view.
+Besides making selections using the mouse, you can make precise selections of elements by specifying their ID numbers in the Selection Range dialog box shown in Figure 4-4 
+which you can access from the Select menu. This dialog box lets you select elements or springs within a specified range. ( <strong> Replace with a video/2fta7y tany 2l pdf</strong> )
+</p>
+
+
+<hr>
+</div>
+   <!------------------------------------------------------------- Import Drafts ----------------------------------------------------------------------------------->
+
+<h3>Import Drafts</h3>
+
+<p>
+  Importing drafting objects to the viewer is an option that enables you to import draft 
+  lines from the modeler. This is useful in case you need to import certain draft lines 
+  to use as a general reference or as a path for the camera movement in the Motion Path command. 
+  Importing a file allows you to import the existing plans in certain levels or certain layers 
+  to be created in your ELS model.(<b>Video Here!</b>)
+</p>
+
+
+<hr>
+<h4>Selective Saving of Output (n7otaha ma3 2l output isA)</h4>
+<p>
+  Selective saving of output is an option that enables you to save only a selection of the frames of the simulation output results. 
+  This is useful in case you need to keep only important frames, want to change the order of frames in the simulation, 
+  or simply reduce the disk space occupied by the simulation output files resulting from too many frames. 
+  (You can know how much space is occupied by the simulation output using the Statistics dialog box accessible from the Tools menu.) 
+</p>
+
+
+
+<!--------------------------------------------------------------------------------------Display ----------------------------------------------------------------------------------->
+<div>
+<h2 id="A2", name="A2" style="text-align:left">Display</h2>
+  <p style="color:#47476b;">
+    What if you have a huge model and you want to view only a part of it without affecting the whole
+    model? What if you want a customized theme to help ensure you're comfy enough with the interface to
+    get the most out of ELS? Welcome; You're at the right place to learn how to customize your whole 
+    experience with ELS's results viewer.
+  </p>
+
+
+    <h3>Clipping</h3>
+    <p style="color:#47476b;">
+      Clipping is an option that helps you view elements of your model that are normally hidden 
+      behind others. It does so by clipping the elements obstructing their view. 
+      It can also be considered as a tool for viewing cross-sections of your model 
+      from different directions.
+    </p>
+<p>
+  There are two types of clipping in ELS's Viewer:
+</p>
+<div class="row">
+  <div class="col-6">
+    <p style="text-align:center;">
+      Plane clipping (<b>Video Here!</b>)
+    </p>
+   
+  </div>
+  <div class="col-6">
+    <p style="text-align:center;">
+      Volume clipping (<b>Video Here!</b>)
+    </p>
+  </div>  
+</div>
+    <hr>
+    <h3>Walkthrough</h3>
+    <p style="color:#47476b;">
+      The walkthrough mode enables you to navigate your 3D structure as if you are “walking” 
+      around it or even through it. To activate the walkthrough mode, 
+      click the button on the View toolbar or select Tools>Walkthrough.
+      In this mode, no panning or zooming is possible. Instead, you can change your standing position 
+      around the structure by using the (Shift), (Page Up), (Page Down), and arrow keys. 
+        You can move around, change the direction in which you are looking, 
+        descend, or ascend by using the key combinations. (<b>Video Here!</b>)
+    </p>
+
+
+
+    <hr>
+    <h3>Settings</h3>
+      Write what settings--------------------------------------------------------
+    <h4>Light Settings</h4>
+    <p style="color:#47476b;">
+      When viewing a 3D model, light settings can have dramatic effects on the way it appears. When properly used, 
+      it can help you obtain the best and clearest view of your structural model.
+      ELS gives you complete control on the light sources around your model using 
+      the Light Settings dialog box. You can open this dialog box by 
+      clicking the button on the View Settings toolbar or selecting Light Settings from the Tools menu.
+      <br>
+      The lighting color is further divided into three parts (<b>Video Here!</b>):
+      <ul>
+        <li>
+          Ambience, which represents how the model reflects light which is falling at it from all directions uniformly, as if modeling light from the sky.
+        </li>
+        <li>
+          Specular, which represents how the model reflects light which is falling at it from a point source. Each surface will reflect this light uniformly 
+          in all directions with intensity depending on whether the surface faces towards the light source or away from it. 
+          This type of reflection is what best defines the 3D shape of a model.
+        </li>
+        <li>
+          Position, which represents the position of the light source.
+        </li>
+      </ul>
+<div class="row">
+    <div class="col-6">
+      <div class="card" style="width:40%;">
+        <img src="Ambience.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Ambience without Specular effect</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 g-6">
+      <div class="card" style="width: 40%;">
+        <img src="Specular.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Specular without Ambience effect</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 ">
+      <div class="card " >
+          <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+          </div>
+      </div>
+  </div>
+  <div class="col-6">
+    <div class="card " >
+        <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+        </div>
+    </div>
+</div>
+
+</div>
+      
+    </p>
+    <h4>Color Settings</h4>
+    <p style="color:#47476b;">
+      In ELS you can change the color of objects that appear inside the viewer window. Color of structural components like girders and slabs can be set by clicking the small 
+      colored boxes beside their names in the Structure browser tree. To color just one slab or girder, 
+      not all of them, you can do so by using the Properties browser (see Section 03.1 for more details).
+      To set colors of non-structural objects (like boundaries, springs, and viewer background) or indicators 
+      (like element centroid and velocity vectors), use the Color Settings dialog box by clicking the button or selecting Color Settings from the Tools menu. 
+      The dialog box is shown in Figure 5-7. Choose the required components from the table shown then select its color from the palette.To set colors of the various materials available in your project, 
+      you can use the Material Types dialog box by selecting Material Types Browser and double click on any material type from the tree. The dialog box is shown in Figure 5-8. 
+      The dialog box has a list of all the materials in the project, and the color of each. You can click on the color of any material to change it. The change applies to all objects that use this material.
+      (<b>Video Here!</b>)
+    </p> 
+
+    <h4>Drawing Size Settings</h4>
+    <p style="color:#47476b;">
+      In the ELS Viewer, you cannot change dimensions of structural components, as it is just a viewer program.
+       Such changes affect the problem solution and hence are only made in ELS Modeler when defining the structure. 
+      However, you can change the dimensions of visual indicators for springs, contacts, cracks, etc.
+      For example, if you feel that element centroids are too small or that matrix springs are too large, 
+      you can change their drawing sizes easily by using the Drawing Size Settings dialog box accessible from the Tools menu, as shown in Figure 5-9. 
+      You can change the drawing size of any object by typing a number (percentage of the default size) in its corresponding Value (%) cell.
+      Indicators are drawn with sizes relative to the average problem element dimensions or to the element to which they belong. For example, 
+      contact sizes are relative to the overall average since they do not relate to just one element, while spring lengths are relative to their respective element dimensions.
+      The number in the Average Element Radius text box is the value to which all dimensions in the dialog are related. This value is not editable.
+      (<b>Video Here!</b>)
+    </p> 
+
+    <hr>
+
+    <h3>Objects Display Options</h3>
+    <h4>Elements</h4>
+
+    <p style="color:#47476b;">
+      When defining a problem in ELS, you determine how to break structural components into smaller building blocks referred to as matrix springs or mesh elements. 
+      This section discusses the different display modes and options that can be performed on these elements.
+      ELS enables you to view certain elements from the ()button, just you press the button the Show/Hide Elements Settings dialog will appear. 
+      You can check which element(s) material(s), object(s) type and at which level(s) you want to show/hide at the viewer display window. Also ELS offers to view elements in different rendering modes: 
+      solid, shrunk, or wireframe.In wireframe mode, only the outer frames of elements are displayed without the surfaces being rendered. In solid mode however, all surfaces are rendered and colored. 
+      While solid mode enables you to better visualize the structure, wireframe mode enables you to see elements that are normally hidden behind other elements; 
+      it does this without hiding those obstructing the view. Wireframe mode also makes it easy to differentiate between individual elements and adjacent ones, something that is not possible in solid mode.
+      Also user can set the Opacity option for clear the view from the Property of the selected object shown in Figure 6-3 the opacity range is from 1 to 10. (10) mean that the object will appear as opaque 
+      and (1) mean it will be transparence. Shrunk elements mode also helps differentiate individual elements but without sacrificing their solid look. 
+      This is done by drawing elements at 90 % of their original size, hence emphasizing the interfaces between elements. It is also possible to activate both shrunk and wireframe modes simultaneously. 
+      Figure 6-1 shows all possibilities of element rendering in the ELS Viewer. You can select the element display mode from the Problem Features menu or from the toolbars. 
+      The button toggles between solid and wireframe modes while the button toggles between shrink and normal size modes or use Show elements dialog.
+      Every element is given a unique ID number in ELS which can be displayed by clicking the button. 
+      To view just the element centroids click the button on the Problem Features toolbar or check them from the Show Elements.
+      You can also toggle the display of all elements on or off, view outer elements, or outer surfaces from the Problem Features menu 
+      or by clicking the arrow beside the button in the Problem Features toolbar or Show Elements Dialog.
+      While it is not possible to change the color of an individual element, you can set the color with all the display modes 
+      for an individual structural component or all components of a specific type by using the Structure browser.
+      (<b>Video Here!</b>)
+    </p> 
+
+    <h4>Springs & Link Members</h4>
+
+    <p style="color:#47476b;">
+      Springs are generated by the ELS solver for use in AEM (Applied Element Method) computations. There are three types of springs: matrix, steel, 
+      and RFT springs. They are not displayed by default as they normally exist in large numbers and viewing them requires large processing power. 
+      You can show or hide springs from the Problem Features menu or by clicking their display button which open the Show/hide Springs Settings dialog  
+      then check from the Springs Materials Settings and levels which springs to show. Or from the right click menu of Structure Browser as shown in Figure 6-6, 
+      then selecting which type of springs to show. Link members on the other hand, are displayed by default and can be hidden by de-selecting the option from the right-click menu of the Structure browser.
+      Changing the colors and drawing size of springs can be performed by using the from the Material tree or from the Structure browser Spring tap.
+       Also, the drawing sizes can be changed by using the properties of the object at the springs
+    </p>
+
+
+    <h4>Boundaries</h4>
+
+    <p style="color:#47476b;">
+
+      Boundaries are surfaces within the simulation that are used to confine the movement of elements in the analysis to a more realistic setting. 
+      For example, the ground on which a structure is built is usually modeled as a bottom boundary. The use of boundaries reduces analysis time and optimizes your results. While they are only
+      set when defining a problem in the ELS Modeler, in the ELS Viewer, you can still change their display settings.
+      To change boundary colors or transparencies, use the Color Settings dialog box explained in Section 5.4. 
+      To show or hide any boundary, use the Problem Features menu or Boundaries toolbar to toggle the display of all (), front(), back(), right (), left (), top (), bottom (),and irregular (),boundaries and wire frame mode ().
+
+
+    </p>
+    <hr>
+   
+
+
+  
+
+  <h3>Camera Manager</h3>
+
+  <p style="color:#47476b;">
+    ELS Results Viewer enables the user to move through the structure to select a certain scene at a certain frame. 
+    It is a useful option that user can see the interior structural components.
+    User has the ability to change the camera position and both horizontal and vertical angle.
+    User can show the Contour for the structure and use the camera manger option for more clear view as shown Figure 5-14 .
+    Check the activate option then you can change in the Horizontal and vertical camera angle and also change the camera position to move through the structure.
+    Also you can hide the camera manger dialog and keep its action by click on Hide option.
+    (<b>Video Here!</b>)
+  </p> 
+
+
+
+ 
+
+<hr>
+</div>
+<!-------------------------------------------------------------------- Markers ----------------------------------------------------------------------------->
+
+
+  <h2 id="A3", name="A3" style="text-align:left">Markers</h2>
+
+  <p style="color:#47476b;">
+    ELS's Viewer enables you to insert markers in exported bitmap and AVI files. 
+    You can use such markers to indicate important events or to display information during video playback. 
+    Figure shows an example use of markers where two columns to be removed are marked for the viewer to see before actually being removed.
+    There are three types of markers: symbol, text, and image. Symbol markers are available in six different shapes: Circle( ), Diamond ( ), Square ( ), Cross( ), Plus Sign ( ), and Triangle ( ). 
+    Text and image markers, as their names simply, enable you to use text and figures as markers. Clicking the Insert Text Marker button ( ) opens a dialog box which prompts you for the text to display, 
+    and clicking the Insert Image Marker button ( ) opens a dialog box to choose the image file to insert as a marker.
+    You can change the color and rotation of a marker, together with other properties in one of two ways, using the Markers browser or Properties browser. 
+    To use the Properties browser for that purpose, you will have to select the markers first by using the Select Markers button (). 
+    You can select multiple markers and change their properties all at once by using the Properties browser.
+    The other method of editing marker properties is using the Markers browser. Some marker properties are common between all types and others are type-specific. 
+    Table 13-1shows the different properties that are available in the Properties browser, and their use.
+    (<b>Video Here!</b>)
+
+  </p> 
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Description</th>
+        <th scope="col">Notes</th>
+    
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <th scope="row">Name</th>
+        <td>Displays marker name</td>
+        <td rowspan="3" style="vertical-align: middle">These properties cannot be changed.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Layer</th>
+        <td>Displays the layer to which the marker belongs.</td>
+  
+      </tr>
+      <tr>
+        <th scope="row">Shape</th>
+        <td >Displays the marker type.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Color</th>
+        <td >Enables you to change the marker color.</td>
+        <td rowspan="6" style="vertical-align: middle">
+          These properties exist for all marker types, and can be changed from both Properties and Markers browsers.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Scale</th>
+        <td> Enables you to change the marker size.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">From</th>
+        <td >Frame number at which marker starts to appear.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">To</th>
+        <td >Frame number at which marker ceases to appear..</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">X,Y</th>
+        <td >Coordinates of the marker location on the screen, with (0,0) being the top-left of the screen. 
+          To move the marker to a new position without having to enter the coordinates explicitly, 
+          click the () button inside the X,Y field in the Properties browser.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Rotation</th>
+        <td >Enables you to rotate the marker by typing the rotation angle in degrees.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Text</th>
+        <td >Enables you to edit the marker text.</td>
+        <td rowspan="2" style="vertical-align: middle">
+          These properties exist only for text markers, and can be changed from the Properties browser only.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Font</th>
+        <td >Enables you to change the text font in use.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Image</th>
+        <td>Displays the path of the source image file.</td>
+        <td rowspan="4" style="vertical-align: middle">
+          These properties exist only for image markers, and can be changed from the Properties browser only.
+        </td>
+     
+      </tr>      
+
+      <tr>
+        <th scope="row">Width</th>
+        <td>Displays the image width.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Height</th>
+        <td>Displays the image height.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Background color</th>
+        <td>Sets the background of the image.
+        </td>
+     
+      </tr>
+    </tbody>
+  </table>
+
+
+<!--------------------------------------------------------------------------------------Exporting Output ----------------------------------------------------------------------------------->
+<h2 id="A4", name="A4" style="text-align:left">Exporting Output</h2>
+<p>Applied Science International, LLC (ASI) is committed to providing its clients with the best overall product experience.Therefore we offer intuitive technical manuals, custom software development,
+and software training. Our products are designed with superior quality along with ease of use.</p>
+
+    <div class="row gx-1 gy-0">
+      <div class="col-lg-4 col-md-4 col-sm-6" > 
+        <h3 id="A41",name="A41"style="text-align:center ;" >Service & Support</h3> 
+        <p >For details about ELS Services and Support offerings, please visit: 
+          <br>
+          <a href="https://www.extremeloading.com/customer-services-support/"  
+          style="color:#003d99"> Extreme Loading® for Structures.</a> 
+        </p>
+      </div>   
+
+      <div class="col-lg-4 col-md-4 col-sm-6" > 
+        <h3 id="A42",name="A42" style="text-align:center ;">Contact Technical Support</h3>
+        <ul>
+          <li><strong >Web Support:</strong>
+            <br>
+              <p style="margin-top:0">Sign in to your
+              <a href="https://portal.appliedscienceint.com/Account/Login?ReturnUrl=%2f%3fASISite%3dELS&ASISite=ELS"  
+              style="color:#003d99">ELS Portal account</a> & fill out the Technical Support Form. 
+            </p>
+            </li>
+              
+          
+          <li><strong>Telephone Support:</strong>
+            <p style="margin-top:0">
+            Call ASI at &#43;1 (919) 645-409.
+            </p>
+          </li>
+      </div>   
+
+      <div class="col-lg-4 col-md-4 col-sm-6"> 
+        <h3 id="A43",name="A43" style="text-align:center ;">Contact ASI</h3>
+        <p>For more information about Applied Science International, LLC, its products and services, visit
+
+          <a href="https://www.appliedscienceint.com"  style="color:#003d99"> 
+            Applied Science International: </a>
+          <ul>
+          <p style="margin-top:-10px">
+            <li style="color:#003d99;"> 
+              <a href="http://www.appliedscienceint.com/ExtrtemeLoadingProducts.aspx"  
+              style="color:#003d99">Extreme Loading® Products</a> 
+            </li>
+            <li style="color:#003d99"> 
+              <a href="http://www.appliedscienceint.com/SteelSmartProducts.aspx"  
+              style="color:#003d99">SteelSmart™ Products</a> 
+            </li>
+            <li style="color:#003d99"> 
+              <a href="https://www.appliedscienceint.com/advanced-structural-engineering-services/" 
+              style="color:#003d99" >Structural Analysis Consultation Services</a> 
+            </li>
+            </p>
+            </ul>
+      </div>   
+
+    </div>

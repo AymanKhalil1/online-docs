@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+
+
+    <style>
+b{color: rgb(56, 8, 56);}
+.accordion-button{font-size: 20px;}
+.icon{width:30px; 
+      height:30px;}
+.sub1{margin-left: 18px;}
+.sub2{margin-left: 20px;}
+
+      img{
+          cursor: pointer;
+      }
+      .btn-bd-secondary {
+--bs-btn-font-weight: 400;
+--bs-btn-font-size: 30px;
+/* --bs-btn-font-weight: 600; */
+--bs-btn-color: var(--bs-black);
+--bs-btn-bg: var(--bd-violet); 
+--bs-btn-border-color: var(--bd-violet);
+ /*--bs-btn-border-radius: .5rem; 
+ --bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)}; */
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)}; 
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+.btn-bd-primary {
+--bs-btn-font-weight: 600;
+--bs-btn-color: var(--bs-white);
+--bs-btn-bg: var(--bd-violet);
+--bs-btn-border-color: var(--bd-violet);
+--bs-btn-border-radius: .5rem;
+--bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+
+[class*="col"]{
+  padding: 1rem;
+  }
+  p, li{font-size:18px}
+  a{color:black;
+  text-decoration: none;}
+  .shadow {
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+   
+  </style>
+</head>
+<body>
+  <div class="container  mt-5 mb-5 ">
+<!-------------------------------------------------------------------- navigation --------------------------------------------------------------------------->
+
+    <nav class="navbar bg-white ">
+
+      <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" 
+      data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"> Viewer Manual's Navigation
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end bg-white" tabindex="-1" id="offcanvasNavbar" 
+      aria-labelledby="offcanvasNavbarLabel">
+      <!------------------------------------------ Header ------------------------------------------------>
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Viewer Manual </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <!------------------------------------------ Body ------------------------------------------------>
+          
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="Home.html">Viewer's Home</a>
+              </li> -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="" 
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Why ELS' Viewer?
+                </a>
+              
+  
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Home.html#A1">Why ELS?</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+  
+                  <li><a class="dropdown-item" href="Home.html#A1">Most Notable Features</a></li>
+                  <li><a class="dropdown-item " href="New.html">What's New in V10?</a></li>
+  
+                </ul>
+              </li>
+
+              
+              <li class="nav-item">
+                <a class="nav-link " href="Home.html#A2">Before You Start</a>
+              </li>
+
+                      <!------------------------------------------ Finding Your Way Through ELS ------------------------------------------------>
+
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="" 
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Finding Your Way Through ELS
+              </a>
+            
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Home.html#A3">How to find your way?</a></li>
+                <li><a class="dropdown-item" href="Home.html#A3">Springs</a></li>
+                <li><a class="dropdown-item" href="Home.html#A3">Elements</a></li>
+                <li><a class="dropdown-item" href="Home.html#A3">Frames</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item " href="WorkSpace.html">Viewer Workspace</a></li>
+                <ul style="list-style: none;">
+                    <li ><a class="dropdown-item " href="WorkSpace.html#A1">&#10551;&nbsp Menus</a></li>
+                    <li ><a class="dropdown-item " href="WorkSpace.html#A2">&#10551;&nbsp Browsers</a></li>
+                    </ul>
+                <li><a class="dropdown-item " href="BasicFeatures.html">Basic Features</a></li>
+                <ul style="list-style: none;">
+                  <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Model Navigation</a></li>
+                  <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Display</a></li>
+                  <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Markers</a></li>
+
+                  </ul>
+                <li><a class="dropdown-item " href="ViewerSpecialities.html">Viewer's Specialties</a></li>
+                <ul style="list-style: none;">
+                  <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Advanced Options</a></li>
+                  <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Charts</a></li>
+                  <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Contours</a></li>
+                  <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Straining Actions</a></li>
+                  <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Eigen Analysis</a></li>
+                  </ul>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="Home.html#A4" 
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Technical Support
+              </a>
+            
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Home.html#A4">Technical Support</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li><a class="dropdown-item " href="Home.html#A4">Service & Support</a></li>
+                <li><a class="dropdown-item " href="Home.html#A4">Contact Technical Support</a></li>
+                <li><a class="dropdown-item " href="Home.html#A4">Contact ASI</a></li>
+                
+
+
+
+        </div>
+      </div>
+   
+
+
+  </nav>
+
+
+
+
+
+<!---------------------------------------------------- Main Body ------------------------------------------------------------->
+
+  <h1>ELS's Viewer</h1>
+
+
+
+<div class="container-fluid ">
+            <p >Extreme Loading® for Structures's (ELS) Viewer is part of ELS's software package, 
+              which consists of 3 programs:
+              <br>
+              the Modeling Environment (<b>ELS's Modeler</b>),
+              <b>ELS's Solver</b> - utilizing the Applied Element Method (AEM),
+              and the Results Viewer (<b>ELS's Viewer</b>).
+            </p>
+
+              <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="card border-dark  mb-3 shadow" >
+                    <div class="card-header bg-dark border-dark text-white">Program1</div>
+                    <div class="card-body text-dark">
+                      <h5 class="card-title">ELS's Modeler</h5>
+                      <p class="card-text">
+                        <ul style="text-align: left;">
+                          <li >Define material types and properties.
+                          <li> Define structural component details.
+                          <li> Model structure geometry.
+                          <li>Apply loads to model.
+                    </ul>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-dark mt-3">
+                      <a href="https://www.extremeloading.com/structural-analysis-software/els-modeler/" 
+                      target="_blank"  class="btn btn-dark">Go to ELS's Modeler</a></div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="card border-primary  mb-3 shadow">
+                    <div class="card-header bg-primary border-primary text-white">Program2</div>
+                    <div class="card-body text-secondary">
+                      <h5 class="card-title"style="color: rgb(26, 101, 161)">ELS's Solver</h5>
+                      <p class="card-text">
+                        <ul type="square"style="text-align: left;color: rgb(26, 101, 161);">
+                          <li>Generates elements and springs for problem.
+                          <li>Analyzes the problem using AEM.
+                          <li>Writes output files.
+                          </ul>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-primary mt-3">
+                      <a href="https://www.extremeloading.com/structural-analysis-software/aem-solver/" target="_blank"  class="btn btn-primary">Go to ELS's Solver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="card border-dark  mb-3 shadow">
+                    <div class="card-header bg-dark border-secondary text-white">Program3</div>
+                    <div class="card-body">
+                      <h5 class="card-title">ELS's Viewer</h5>
+                      <p class="card-text">
+                        <ul type="square" >
+                        <li style="font-size:16px">View and animate structure displacements.
+                        <li style="font-size:16px">Analyze results using charts, contours, and Straining actions diagrams.
+                        <li style="font-size:16px">Export chart data, bitmaps, videos, and many other output formats.
+                        </ul>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary mt-1">
+                      <a href="https://www.extremeloading.com/structural-analysis-software/extreme-loading-for-structures-viewer-features/" target="_blank"  class="btn btn-dark">Go to ELS's Viewer</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <hr>
+ 
+
+
+
+
+         <!-------------------------------------------------------------Why ELS? ----------------------------------------------------------------------------------->
+
+
+<h2 id="A1", name="A1" style="text-align:left">Why ELS's Viewer?</h2>
+
+    <p style="color:#47476b;">ELS's Viewer is a state-of-the-art graphical user interface that enables you to view
+structural models with realistic appearance and behavior. It also provides you with
+powerful tools for analyzing simulation results and presenting them afterwards.</p>
+
+<div class="row gx-1 gy-0 ">
+  <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center ;"> 
+    <button type="button" class="btn btn-bd-secondary "
+    data-bs-toggle="modal" 
+    data-bs-target="#exampleModal4">Most Notable Features
+  </button>
+    <br>   
+    <button type="button" class="btn btn-bd-secondary"
+    data-bs-toggle="modal" 
+    data-bs-target="#exampleModal4">
+     <img 
+    data-bs-toggle="modal" 
+    data-bs-target="#exampleModal4" 
+    src="Features.png"
+    style="height:50%;width:50%">
+       </img>
+      </button>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center ;"> 
+      <button type="button" class="btn btn-bd-secondary "> <a href="New.html"> What's New in V10?</a> 
+     </button>
+      <br>   
+      <a href="New.html"><button type="button" class="btn btn-bd-secondary">
+       <img  src="New.png" style="height:50%;width:50%">
+         </img>
+        </button></a>
+    </div>          
+      
+</div>
+
+<div class="modal fade" 
+id="exampleModal4" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">ELS's Viewer Most Notable Features</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 style="text-align:left">Model Viewing</h3>
+        <ul>
+    <li>3D views from any direction.</li>
+    <li>Walkthrough mode. </li>
+    <li>Model clipping for viewing the hidden parts. </li>
+    <li>Any model object can be displayed or hidden. </li>
+    <li>Model elements can be viewed in solid, wireframe, or shrink modes. </li>
+    <li>View spring states. </li>
+  </ul>
+  <h3 style="text-align:left">Charts</h3>
+<ul>
+
+    <li>  Plot data for any data variable against any other variable (including time and loading increments). </li>
+    <li>Manage chart and series display options. </li>
+    <li>Export chart data. </li>
+    <li> Differentiate and integrate any chart data.</li>
+  </ul>
+
+  <h3 style="text-align:left">Contour Diagrams</h3>
+  <ul>
+    <li>Stress/Strain contours can have their values calculated in global and principal axes
+directions or custom vectors. You can plot them on structure surfaces or crosssections. </li>
+    <li>Kinematic property contours can be drawn for displacement, velocity,
+        acceleration, or rotation.</li>
+    <li>Blast pressure contours on structure surfaces.</li>
+    <li>OpenFOAM pressure on Structure objects. </li>
+      </ul>
+
+    <h3 style="text-align:left">Straining Actions Diagrams</h3>
+    <ul>
+    <li>Draw normal, shear, bending moment, section rotation and torsion diagrams at
+        the same time for different structure parts.</li>
+    <li>Draw Straining actions envelopes. </li>
+    <li>Straining actions values are calculated automatically for sections along columns
+        and girders having automatic mesh. </li>
+    <li>Calculation of straining actions for custom components. </li>
+        </ul>
+
+        <h3 style="text-align:left">Eigen Analysis-<span style="font-weight:lighter;font-size:18px">
+          <i>you can view vibration analysis results</i></span></h3>
+        <ul>
+        <li>DView and animate vibration mode shapes (Eigenvectors).</li>
+        <li>View vibration frequencies or periods, and plot their changes in charts resulting
+            from variation in structure stiffness.</li>
+        <li>Add differentiate and integrate for the chart. </li>
+            </ul>
+
+        <h3 style="text-align:left">Animation-<span style="font-weight:lighter;font-size:18px"><i>you can view variations in the following simulation results with respect to
+            time and loading increments</i></span></h3>
+      <ul>
+        <li>Structural displacements.</li>
+        <li>Straining actions diagrams. </li>
+        <li>Eigen modes. </li>
+        <li>Charts. </li>
+        <li>Contours. </li>
+      </ul>
+      <h3 style="text-align:left">Output Formats - <span style="font-weight:lighter;font-size:18px"><i>you can export output in many file formats: bitmaps, videos, DXF, STL,
+          Script from opened charts and OBJ format.</i></span></h3>
+
+</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" 
+        data-bs-dismiss="modal">Close</button>
+   
+      </div>
+    </div>
+  </div>
+</div>  
+
+<p><a href="https://www.extremeloading.com/"  target="_blank" 
+  style="color:#003d99" >Continue reading about ELS...</a> 
+</p>
+
+
+<hr>
+<!--------------------------------------------------------------------------------------Before U start ----------------------------------------------------------------------------------->
+
+<h2 id="A2", name="A2" style="text-align:left">Before You Start</h2>
+  <p style="color:#47476b;">ELS Viewer is installed as a part of ELS's package and does not have a separate
+  installation procedure. For more information on system requirements and
+  installation of the ELS package see the ELS Quick Start Guide .
+  </p>
+
+  <p style="color:#47476b;">You can access ELS's Viewer through two ways;
+    <ol>
+      <li>Directly from the operating system</li>
+      <li>From within the ELS Modeling Environment:
+        <br>From ELS's Modeler >> Postprocessing  >> Open Extreme Loading Results Viewer or click its
+        corresponding toolbar button .
+      </li>
+    </ol>
+ 
+  </p>
+  <p> <b>Note that</b> You cannot open ELS Viewer from ELS Modeler except after at least one
+  analysis step has been executed by ELS Solver on the *.els input file.
+  </p>
+
+
+  <p>Different ways are available to learn more about the capabilities of ELS.
+    This includes built-in help in the software itself, video tutorials, verification samples, 
+    and available manuals and guides, all found in ASI's Portal.
+  </p>
+
+  <p>For FAQ or any any updates related to ELS, kindly visit  
+   <a href="https://www.extremeloading.com/" target="_blank" style="color:#003d99"> Extreme Loading® for Structures.</a>
+  </p>
+
+
+<hr>
+<!-------------------------------------------------------------------- Finding Your Way Through ELS's Viewer ----------------------------------------------------------------------------->
+
+
+  <h2 id="A3", name="A3" style="text-align:left">Finding Your Way Through ELS's Viewer</h2>
+
+  <p>
+    Before going any further through this manual, you must first understand some ELS and AEM related
+    terms like <b>springs</b>,and <b>steel elements</b>, and <b>output frames</b>.
+  </p>
+
+
+  <div class="row gx-1 gy-0">
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal">Springs
+      </button>
+        <br>   
+        <button type="button" class="btn btn-bd-secondary"
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal">
+         <img 
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal" 
+        src="Springs.png"
+        style="height:50%;width:50%">
+           </img>
+          </button>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+          <button type="button" class="btn btn-bd-secondary "
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal2">Elements
+        </button>
+          <br>   
+          <button type="button" class="btn btn-bd-secondary"
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal2">
+           <img 
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal2" 
+          src="Elements.png"
+          style="height:50%;width:50%">
+             </img>
+            </button>
+          </div>
+        <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+          <button type="button" class="btn btn-bd-secondary "
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal2">Frames
+        </button>
+          <br>   
+          <button type="button" class="btn btn-bd-secondary"
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal3">
+            <img 
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal3" 
+          src="Frames.png"
+          style="height:50%;width:50%">
+              </img>
+            </button>
+          </div>            
+          
+  </div>
+
+<div class="modal fade" 
+    id="exampleModal" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Springs</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body">
+                <p>
+                  <b>Springs -</b> are the objects generated by ELS to be used in the AEM analysis.
+                  The name comes from their behavior which is, more or less, like actual springs in the
+                  AEM theory in addition to holding the elements together. There are two ways to define springs:
+                  <ol>
+                    <li> According to their material (concrete, steel, brick..,etc.)</li>
+                    <li> According to their type; <b>matrix</b> springs (concrete, mortar, brick,……)
+                      or <b>reinforcement</b> springs or implicit springs. </li>
+                  </ol>
+                </p>
+
+              <p>
+                All straining actions, stresses, or strains' calculations use these spring objects.
+                Note that link members are also treated as springs having only normal force.
+                <br>For more information on springs check out
+                <a href="https://portal.appliedscienceint.com/Documents-Video" target="_blank" style="color:#003d99">ELS's Theoretical Manual</a>
+                <img  style="display: block;width:90% ;height:90%; 
+                margin-left: auto;margin-right: auto;"src="Springs.bmp">
+              </p>
+            
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" 
+            data-bs-dismiss="modal">Close</button>
+      
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="modal fade" 
+    id="exampleModal2" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Elements</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                  <b>Elements -</b> are generated by ELS's Solver to be used in the AEM analysis.
+                          <b>Structural components</b> are converted to elements connected by springs in the AEM analysis.
+                          <b>All components</b> are converted to small elements called <b>*Matrix Elements*</b> except some
+                          types of steel sections which are converted to Steel Elements. The conversion depends on the
+                          way the steel was modeled in ELS's Modeler, as implicit or explicit steel.
+                          <br>
+                          For more information on element generation and implicit and explicit steel,
+                          refer to 
+                          <a href="https://portal.appliedscienceint.com/Documents-Video" target="_blank" style="color:#003d99">ELS's Theoretical Manual</a>
+                          <img  style="display: block;width:90% ;height:90%; margin-left: auto;margin-right: auto;" src="Elements.bmp">
+                </p>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" 
+          data-bs-dismiss="modal">Close</button>
+   
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<div class="modal fade" 
+id="exampleModal3" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Frames</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>Frames - </b> are units which hold the output analysis results. Each frame includes
+         details about the structure at a particular time instance or load increment. Charts,
+         contours, and straining actions can all be displayed at the different frames. Playing
+         the results' simulation shows the structure's response to loading in consecutive frames. Frames are
+         numbered sequentially starting from 1.
+         <img  style="display:inline;margin:0 auto ;width:100% ;height:100%" src="Total Videos/Frames.gif">
+        </img>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" 
+        data-bs-dismiss="modal">Close</button>
+   
+      </div>
+    </div>
+  </div>
+</div>   
+
+    <p>
+      What follows is a brief guide on how to find your way through ELS's Viewer to get the best out of it.
+    </p>
+          
+  
+    <div class="row gx-1 gy-0">
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+        <button type="button" class="btn btn-bd-secondary "> <a href="Workspace.html">
+           Viewer Workspace</a> 
+       </button>
+        <br>   
+        <a href="Workspace.html"><button type="button" class="btn btn-bd-secondary">
+         <img  src="Workspace.png" style="height:50%;width:50%">
+           </img>
+          </button></a>
+      </div>   
+   
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+        <button type="button" class="btn btn-bd-secondary "> <a href="BasicFeatures.html">
+          Basic Features </a> 
+       </button>
+        <br>   
+        <a href="BasicFeatures.html"><button type="button" class="btn btn-bd-secondary">
+         <img  src="Basic Features.png" style="height:50%;width:50%">
+           </img>
+          </button></a>
+      </div>   
+      
+   
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center ;"> 
+        <button type="button" class="btn btn-bd-secondary "> <a href="ViewerSpecialities.html">
+          Viewer's Specialties</a> 
+       </button>
+        <br>   
+        <a href="ViewerSpecialities.html"><button type="button" class="btn btn-bd-secondary">
+         <img  src="Specialities.png" style="height:50%;width:50%">
+           </img>
+          </button></a>
+      </div>   
+      
+   
+   
+   
+    </div>
+
+
+<hr>
+<!--------------------------------------------------------------------------------------Technical Support ----------------------------------------------------------------------------------->
+<h2 id="A4", name="A4" style="text-align:left">Technical Support</h2>
+<p>Applied Science International, LLC (ASI) is committed to providing its clients with the best overall product experience.Therefore we offer intuitive technical manuals, custom software development,
+and software training. Our products are designed with superior quality along with ease of use.</p>
+
+<div class="row gx-1 gy-0">
+  <div class="col-lg-4 col-md-4 col-sm-6" > 
+    <h3 id="A41",name="A41"style="text-align:center ;" >Service & Support</h3> 
+    <p >For details about ELS Services and Support offerings, please visit: 
+      <br>
+      <a href="https://www.extremeloading.com/customer-services-support/" target="_blank"  
+      style="color:#003d99"> Extreme Loading® for Structures.</a> 
+    </p>
+  </div>   
+
+  <div class="col-lg-4 col-md-4 col-sm-6" > 
+    <h3 id="A42",name="A42" style="text-align:center ;">Contact Technical Support</h3>
+    <ul>
+      <li><strong >Web Support:</strong>
+        <br>
+          <p style="margin-top:0">Sign in to your
+          <a href="https://portal.appliedscienceint.com/Account/Login?ReturnUrl=%2f%3fASISite%3dELS&ASISite=ELS"  target="_blank" 
+          style="color:#003d99">ELS Portal account</a> & fill out the Technical Support Form. 
+        </p>
+        </li>
+          
+      
+      <li><strong>Telephone Support:</strong>
+        <p style="margin-top:0">
+        Call ASI at &#43;1 (919) 645-409.
+        </p>
+      </li>
+  </div>   
+
+  <div class="col-lg-4 col-md-4 col-sm-6"> 
+    <h3 id="A43",name="A43" style="text-align:center ;">Contact ASI</h3>
+    <p>For more information about Applied Science International, LLC, its products and services, visit
+
+      <a href="https://www.appliedscienceint.com" target="_blank"   style="color:#003d99"> 
+        Applied Science International: </a>
+      <ul>
+      <p style="margin-top:-10px">
+        <li style="color:#003d99;"> 
+          <a href="http://www.appliedscienceint.com/ExtrtemeLoadingProducts.aspx"  target="_blank" 
+          style="color:#003d99">Extreme Loading® Products</a> 
+        </li>
+        <li style="color:#003d99"> 
+          <a href="http://www.appliedscienceint.com/SteelSmartProducts.aspx"  target="_blank" 
+          style="color:#003d99">SteelSmart™ Products</a> 
+        </li>
+        <li style="color:#003d99"> 
+          <a href="https://www.appliedscienceint.com/advanced-structural-engineering-services/" target="_blank" 
+          style="color:#003d99" >Structural Analysis Consultation Services</a> 
+        </li>
+        </p>
+        </ul>
+  </div>   
+
+</div>
+
+
+  </div>
+</body>
+</html>

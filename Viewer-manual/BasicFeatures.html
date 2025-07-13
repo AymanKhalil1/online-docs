@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Features</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var myToast = document.getElementById("myToast");
+    
+        // Create toast instance
+        var toast = new bootstrap.Toast(myToast);
+    
+        // myToast.addEventListener("hidden.bs.toast", function(){
+        //     alert("Toast component has been completely closed.");
+        // });
+    });
+    </script>
+
+
+    <style>
+/* b{color: #47476b} */
+b{color: black}
+.accordion-button{font-size: 20px;}
+.icon{width:30px; 
+      height:30px;}
+.sub1{margin-left: 10px;}
+.sub2{margin-left: 20px;}
+
+
+      /* img{
+          cursor: pointer;
+      } */
+.col-lg-6 li{margin-bottom: -10px;}
+
+.btn-bd-secondary {
+--bs-btn-font-weight: 400;
+--bs-btn-font-size: 20px;
+/* --bs-btn-font-weight: 600; */
+--bs-btn-color: var(--bs-black);
+--bs-btn-bg: var(--bd-violet); 
+--bs-btn-border-color: var(--bd-violet);
+ /*--bs-btn-border-radius: .5rem; 
+ --bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)}; */
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)}; 
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+.btn-bd-primary {
+--bs-btn-font-weight: 600;
+--bs-btn-color: var(--bs-white);
+--bs-btn-bg: var(--bd-violet);
+--bs-btn-border-color: var(--bd-violet);
+--bs-btn-border-radius: .5rem;
+--bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+
+[class*="col"]{
+  padding: 1rem;
+  }
+  p, li{font-size:18px}
+  a{color:black;
+  text-decoration: none;}
+  .shadow {
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+   
+  </style>
+</head>
+<body>
+  <div class="container  mt-5 mb-5 ">
+<!-------------------------------------------------------------------- navigation --------------------------------------------------------------------------->
+
+
+<nav class="navbar bg-white ">
+
+  <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" 
+  data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"> Viewer Manual's Navigation
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="offcanvas offcanvas-end bg-white" tabindex="-1" id="offcanvasNavbar" 
+  aria-labelledby="offcanvasNavbarLabel">
+  <!------------------------------------------ Header ------------------------------------------------>
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Viewer Manual </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+    <!------------------------------------------ Body ------------------------------------------------>
+      
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="Home.html">Viewer's Home</a>
+          </li> -->
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Why ELS' Viewer?
+            </a>
+          
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Home.html#A1">Why ELS?</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="Home.html#A1">Most Notable Features</a></li>
+              <li><a class="dropdown-item " href="New.html">What's New in V10?</a></li>
+
+            </ul>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link " href="Home.html#A2">Before You Start</a>
+          </li>
+
+                  <!------------------------------------------ Finding Your Way Through ELS ------------------------------------------------>
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="" 
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Finding Your Way Through ELS
+          </a>
+        
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Home.html#A3">How to find your way?</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Springs</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Elements</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Frames</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li><a class="dropdown-item " href="WorkSpace.html">Viewer Workspace</a></li>
+            <ul style="list-style: none;">
+                <li ><a class="dropdown-item " href="WorkSpace.html#A1">&#10551;&nbsp Menus</a></li>
+                <li ><a class="dropdown-item " href="WorkSpace.html#A2">&#10551;&nbsp Browsers</a></li>
+                </ul>
+            <li><a class="dropdown-item " href="BasicFeatures.html">Basic Features</a></li>
+            <ul style="list-style: none;">
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Model Navigation</a></li>
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Display</a></li>
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Markers</a></li>
+
+              </ul>
+            <li><a class="dropdown-item " href="ViewerSpecialities.html">Viewer's Specialties</a></li>
+            <ul style="list-style: none;">
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Advanced Options</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Charts</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Contours</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Straining Actions</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Eigen Analysis</a></li>
+              </ul>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="Home.html#A4" 
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Technical Support
+          </a>
+        
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Home.html#A4">Technical Support</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li><a class="dropdown-item " href="Home.html#A4">Service & Support</a></li>
+            <li><a class="dropdown-item " href="Home.html#A4">Contact Technical Support</a></li>
+            <li><a class="dropdown-item " href="Home.html#A4">Contact ASI</a></li>
+            
+
+
+
+    </div>
+  </div>
+
+
+
+</nav>
+
+  
+<!---------------------------------------------------- Main Body ------------------------------------------------------------->
+
+  <h1>ELS's Viewer's Basic Features</h1>
+
+
+<div class="container-fluid p-0">
+
+
+
+          
+
+
+         <!-------------------------------------------------------------Model Navigation ----------------------------------------------------------------------------------->
+
+      <div class="row border m-5 ">
+  <div class="col-lg-6 col-md-12">
+    <img  
+    src="perspective.gif" style="width:100%;">
+      </img>
+      </div>
+
+  <div class="col-lg-6 col-md-12" >
+    <div class="container p-5">
+      <h2 id="A1" , name="A1">Model Navigation</h2>
+      <p style="color:#47476b;" align="justify">ELS's Viewer is a state-of-the-art graphical user interface 
+        that enables you to view structural models with realistic appearance and behavior simulating complex states and 
+        loads in an eye-friendly presentation which makes it easier to follow up the structural behavior based on the produced results.</p>
+    <p>
+    <ul>
+      <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal1"onclick="playVid1()"> Pan<img src="video.gif" style="width:45px"></img>
+    </button></li>
+    
+    <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal2"onclick="playVid2()"> Zoom<img src="video.gif" style="width:45px"></img>
+    </button></li>
+    <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal3"onclick="playVid3()"> 3D Views<img src="text.gif" style="width:45px"></img>
+    </button></li>
+    
+    <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal4"onclick="playVid4()"> Select<img src="text.gif" style="width:45px"></img>
+    </button></li>
+    </ul>
+    </p>
+
+<!------------------------------------------------------------------------------------------------- Modal1 --------------------------------------------------------------------------->
+    <div class="modal fade" 
+    id="exampleModal1" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Pan</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" 
+            aria-label="Close"onclick="pauseVid1()"></button>
+          </div>
+          <div class="modal-body">
+           <video id=" Video" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+           src="Final Videos/Pan.mp4" controls ></video>
+
+    
+    </p>
+          </div>
+          <div class="modal-footer">            
+            <button class="btn btn-primary" data-bs-target="#exampleModal2" data-bs-toggle="modal" onclick="pauseVid1();playVid2()">Next Video</button>
+       
+          </div>
+        </div>
+      </div>
+    </div> 
+
+<!------------------------------------------------------------------------------------------------- Modal2 --------------------------------------------------------------------------->
+    
+    <div class="modal fade" 
+    id="exampleModal2" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Zoom</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" 
+            aria-label="Close"onclick="pauseVid2()" ></button>
+          </div>
+          <div class="modal-body">
+           <video id=" Video2" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+           src="Final Videos/Zoom.mp4" controls ></video>
+
+    
+    </p>
+          </div>
+          <div class="modal-footer">
+            <div class="row  w-100 ">
+    
+                <div class="col-auto me-auto">
+                <button class="btn btn-secondary " data-bs-target="#exampleModal1" data-bs-toggle="modal" onclick="pauseVid2();playVid1()">Previous</button>
+                </div>
+         
+                <div class="col-auto">
+                <button class="btn btn-primary " data-bs-target="#exampleModal3" data-bs-toggle="modal" onclick="pauseVid2();playVid3()">Next Video</button>
+                </div>
+            </div>
+           
+       
+          </div>
+        </div>
+      </div>
+    </div> 
+<!------------------------------------------------------------------------------------------------- Modal3-3D Views --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal3" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">3D Views</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" 
+        aria-label="Close"onclick="pauseVid3()" ></button>
+      </div>
+      <div class="modal-body">
+       <!-- <video id=" Video3" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+       src="Final Videos/Pan.mp4" controls ></video> -->
+<p>
+  The different viewing directions are defined relative to the global axes: 
+  Front and Back for the Y-axis, Right and Left for the X-axis, and Top and Bottom for the Z-axis. 
+</p>
+  <div class="row  m-5">
+    <div class="col-lg-6 ">
+    <img  
+    src="ViewDir.png"
+    style="height:90%;width:100%">
+       </img>
+      </div>
+      
+      <div class="col-lg-6 ">
+        <ul>
+          <li class="p-3">Isometric (<img  src="Images/3D.png"></img>) </li> 
+          <li class="p-3">Front     (<img  src="Images/3D.png"></img> )</li>  
+          <li class="p-3">Back      (<img  src="Images/3D.png"></img>)</li>  
+          <li class="p-3">Right     (<img  src="Images/3D.png"></img>)</li>  
+          <li class="p-3">Left      (<img  src="Images/3D.png"></img> )</li>  
+          <li class="p-3">Top       (<img  src="Images/3D.png"></img> )</li>  
+          <li class="p-3">Bottom    (<img  src="Images/3D.png"></img>)</li> 
+            <br>
+        </ul>
+      </div>
+      </div>
+  <p align="justify">
+         You can select the required view by clicking the corresponding button either from the 3D View toolbar or from View >3D View. 
+          Note that when any of these views is selected, 
+          all panning and zooming performed is reset.
+          <br>Other than the preset 3D view directions,
+            you can customize the viewing direction by dynamically rotating the model in space using commands that rotate it about the X-axis (<img src="Images/RotateX.png" style="size:100%"> ), 
+            Y-axis ( <img src="Images/RotateY.png" style="size:100%"> ), and Z-axis ( <img src="Images/RotateZ.png" style="size:100%">  ). Clicking on any of these buttons causes the mouse cursor to change its shape in the model viewer window to indicate activation of a rotation mode. 
+            To rotate the model, move your mouse around while pressing the left-button. Press the *Esc* key or Cancel Navigation from the right-click menu when you are done 
+              to exit the rotation mode.
+            <br>If you need a more flexible 3D view rotation tool, you can use the Rotate About XYZ ( <img src="Images/RotateXYZ.png" style="size:100%">  ) option which enables you to rotate the model around the origin, not just one axis.
+          <br>
+          In addition to rotating the model relative to the global axes, you can rotate the model relative to the plane of your screen, about the X-axis ( <img src="Images/RotateScreenX.png" style="size:100%"> ), 
+          Y-axis ( <img src="Images/RotateScreenY.png" style="size:100%"> ), and Z-axis ( <img src="Images/RotateScreenZ.png" style="size:100%">). 
+          For more flexible 3D rotation about the screen, you can use the Arc Ball Rotate option ( <img src="Images/RotateScreenXYZ.png" style="size:100%"> ).
+        <br> For more 3D viewing options, use the Walkthrough mode. 
+            <br> Note: Although the Rotate About XYZ tool is more flexible, it needs more experience to control.
+            It is advisable to use it after trying out the single-axis rotations just to tweak the view to your exact viewing preference.
+          </p>
+        </ul>
+ 
+      </p>
+</div>
+
+
+      
+
+<div class="modal-footer">
+  <div class="row  w-100 ">
+
+      <div class="col-auto me-auto">
+      <button class="btn btn-secondary " data-bs-target="#exampleModal2" data-bs-toggle="modal" onclick="pauseVid3();playVid2()">Previous</button>
+      </div>
+
+      <div class="col-auto">
+      <button class="btn btn-primary " data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="pauseVid3();playVid4()">Next Section</button>
+      </div>
+  </div>
+ 
+
+</div>
+   
+      </div>
+    </div>
+  </div>
+ 
+<!------------------------------------------------------------------------------------------------- Modal4 --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal4" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Select</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" 
+        aria-label="Close"onclick="pauseVid4()" ></button>
+      </div>
+      <div class="modal-body">
+       <!-- <video id=" Video4" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+       src="Final Videos/Zoom.mp4" controls ></video> -->
+
+       <p align="justify">
+        In some cases you'll be needing to select objects; these cases include:
+        <ul>
+          <li style="margin-bottom:0px ;">
+            To view detailed properties of an element or spring in the Properties browser (only possible for a single selected object). 
+            In case of markers, you can view and also edit properties of multiple selections at once. 
+          </li>
+          <li style="margin-bottom:0px ;">
+            To show or hide a group of selected elements.
+          </li>
+          <li style="margin-bottom:0px ;">
+            To view staining actions details at a selected component section. This is done by selecting a section then choosing Component Straining Actions Details from the right-click menu. 
+            For more information on this feature refer to Chapter 10.
+          </li>
+          <li style="margin-bottom:0px ;">
+            To perform some commands in ELS like creating custom components or charts, you will be required to make selections. 
+            For example, to plot a chart, you will be requested to select the elements whose data will be plotted.
+          </li>
+        </ul>
+        <p align="justify">
+        You can select any of the following types in ELS: elements ( <img src="Images/Select_Elements.png" style="size:100% ;"> ), 
+        springs ( <img src="Images/Select_Springs.png" style="size:100% ;">  ), 
+        sections ( <img src="Images/Select_Sections.png" style="size:100% ;">  ), markers ( <img src="Images/Select_Markers.png" style="size:100% ;">  ), 
+        or contact ( <img src="Images/Select_Contacts.png" style="size:100% ;">  ).To select an object you must 
+        first make sure that it is displayed, or else its selection button will be disabled. 
+        To display a type of objects use the Problem Features menu or toolbar (see Chapter 6 for more details).
+         Note that you can only select objects of one type at a time.
+      The action of selection itself is simply done by clicking an element if a single selection is required. If you need to make multiple selections, 
+      click the mouse and drag it to draw a window over the desired elements, or keep the Ctrl (or Shift) key pressed while selecting elements to add them to the existing selection. 
+        Clicking a selected element deselects it.
+      </p>
+      <p align="justify">
+      <strong>
+        When making a window selection, you should note that all elements within this window, including those hidden behind other elements will be selected. 
+      </strong>
+      <br>
+      Figure shows an example of a slab selected from the top view. If it is selected by single selection, 
+      i.e. select elements one by one by clicking them, just the elements visible from the top are actually selected. 
+      If all the elements of the slab are selected using a window, all other slabs beneath it will also be selected.
+      </p>
+      <img src="Select.png" 
+      
+      class="img-fluid mx-auto d-block" >
+      <p align="justify">
+        There are ways to select such a slab using window selection, which will save time compared to selecting all its elements one by one. 
+        One way to do that is by hiding all other levels using the Structure browser before making the selection, 
+        so that there are no elements below the slab. Another way is to hide all columns and girders then select the slab from the front view.
+      Besides making selections using the mouse, you can make precise selections of elements by specifying their ID numbers in the Selection Range dialog box shown in Figure 4-4 
+      which you can access from the Select menu. This dialog box lets you select elements or springs within a specified range. 
+      </p>
+      
+
+      </div>
+      <div class="modal-footer">
+        <div class="row  w-100 ">
+    
+            <div class="col-auto me-auto">
+            <button class="btn btn-secondary " data-bs-target="#exampleModal3" data-bs-toggle="modal" onclick="pauseVid4();playVid3()">Previous</button>
+            </div>
+     
+            <div class="col-auto">
+            <button class="btn btn-primary " data-bs-dismiss="modal" aria-label="Close"onclick="pauseVid4()">Close</button>
+            </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!------------------------------------------------------------------------------------------------- Modal End For Model Navigation --------------------------------------------------------------------------->
+
+
+    <!-- <a href="" style="font-size:20px; color:rgb(45, 117, 49) ;">Explore Features &#8608;</a> -->
+    </div>
+   
+  </div>
+  
+  
+  </div>
+<!-------------------------------------------------------------------------------------------------Display --------------------------------------------------------------------------->
+
+  <div class="row border m-5">
+
+ <div class="col-lg-6 col-md-12 " >
+  <div class="container p-5">
+    <h2 id="A2" ,  name="A2">Display</h2>
+    <p style="color:#47476b;" align="justify">What if you have a huge model and you want to view only a part of it without 
+      affecting the whole model? What if you want a customized theme to help ensure you're comfy enough with 
+      the interface to get the most out of ELS? Welcome on board! 
+      You're at the right place to learn how to customize your whole experience with ELS's results viewer.</p>
+
+    <ul >
+      <li> 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal21"onclick="playVid21()"> Clipping <img src="text.gif" style="width:45px"></img>
+        </button>
+      </li>
+    
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal22"onclick="playVid22()"> Walkthrough <img src="text.gif" style="width:45px"></img>
+        </button>
+      </li>
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal23"onclick="playVid23()"> Light Settings <img src="text.gif" style="width:45px"></img>
+        </button>
+      </li>
+    
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal24"onclick="playVid24()"> Color Settings <img src="text.gif" style="width:45px"></img>
+        </button>
+      </li>
+
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal25"onclick="playVid25()"> Drawing Size <img src="text.gif" style="width:45px"></img>
+        </button>
+      </li>
+
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal26"onclick="playVid26()" > Camera Manager <img src="text.gif"style="width:45px"></img>
+        </button>
+      </li>
+
+      <li > 
+        <button type="button" class="btn btn-bd-secondary "
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal27"onclick="playVid27()" > Objects' Settings <img src="text.gif" style="width:45px"></img>
+        </button>
+     </li>
+    </ul>
+   
+
+
+<!------------------------------------------------------------------------------------------------- Modal21-Clipping --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal21" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Clipping</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" 
+        aria-label="Close"onclick="pauseVid21()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Clipping is an option that helps you view elements of your model that are normally hidden behind others. It does so by clipping or trimming the elements obstructing their view. 
+          It can also be considered a tool for viewing cross-sections of your model from different directions.
+          You can access clipping options from the View menu or the main viewer window right-click menu or 
+          by clicking the <b>Clipping</b> button <img src="Clip.png" > (Top left of the Viewer's Workspace).
+        </p>
+       <!-- <video id=" Video21" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+       src="Final Videos/Pan.mp4" controls ></video> -->
+</p>
+<p>
+  There are two types of clipping in ELS's Viewer:
+</p>
+<div class="row">
+
+  <div class="col-6">
+
+      <h3 style="text-align:center ;">Volume clipping </h3>
+      <p align="justify">
+      Selectively creates the section cuts using a virtual cutting cube that is specified by 2 of its diagonally opposite vertices. 
+      Ticking it activates volume clipping.
+    </p>
+      <img src="VClip.png" style="height:80%; margin-left:15%" >
+ 
+  </div> 
+
+  <div class="col-6">
+   
+      <h3 style="text-align:center ;">Plane clipping </h3>
+      <p align="justify">
+        Selectively creates the section cuts using virtual cutting plane(s). Ticking it activates plane clipping.
+        </p>
+   <br>
+      <img src="PClip.png" style="height:80%; margin-left:10%" >
+
+   
+  </div>
+  </div> 
+  <p>Finally, to remove the applied clipping, whether plane or volume, un-tick *Clipping Active* .</p> 
+      </div>
+      <div class="modal-footer">            
+        <button class="btn btn-primary" data-bs-target="#exampleModal22" data-bs-toggle="modal" onclick="pauseVid21();playVid22()">Next Video</button>
+   
+      </div>
+    </div>
+  </div>
+</div> 
+<!------------------------------------------------------------------------------------------------- Modal22-Walkthrough --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal22" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Walkthrough</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" 
+        aria-label="Close"onclick="pauseVid22()" ></button>
+      </div>
+      <div class="modal-body">
+       <!-- <video id=" Video22" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+       src="Final Videos/Zoom.mp4" controls ></video> -->
+<div class="row">
+  <div class="col-8">
+    <p align="justify">
+      The walkthrough mode enables you to navigate your 3D structure as if you are “walking” 
+      around it or even through it. To activate the walkthrough mode, 
+      click the button on the View toolbar or select Tools> Walkthrough.
+      In this mode, no panning or zooming is possible. Instead, you can change your standing position 
+      around the structure by using the (Shift), (Page Up), (Page Down), and arrow keys. 
+        You can move around, change the direction in which you are looking, 
+        descend, or ascend by using the key combinations. 
+   
+    </p>
+  </div>
+  <div class="col-4">
+    <p>
+ 
+        <img src="Images/Walkthrough.png" style="width:100%">
+    </p>
+  </div>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <div class="row  w-100 ">
+
+            <div class="col-auto me-auto">
+            <button class="btn btn-secondary " data-bs-target="#exampleModal21" data-bs-toggle="modal" onclick="pauseVid22();playVid21()">Previous</button>
+            </div>
+     
+            <div class="col-auto">
+            <button class="btn btn-primary " data-bs-target="#exampleModal23" data-bs-toggle="modal" onclick="pauseVid22();playVid23()">Next Section</button>
+            </div>
+        </div>
+       
+   
+      </div>
+    </div>
+  </div>
+</div> 
+<!------------------------------------------------------------------------------------------------- Modal23-Light Settings --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal23" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Light Settings</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+    aria-label="Close"onclick="pauseVid23()" ></button>
+  </div>
+  <div class="modal-body">
+   <!-- <video id=" Video23" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+   src="Final Videos/Pan.mp4" controls ></video> -->
+
+<p>
+  <div class="row">
+    <div class="col-8">
+<p>
+  When viewing a 3D model, light settings can have dramatic effects on the way it appears. When properly used, 
+  it can help you obtain the best and clearest view of your structural model.
+  ELS gives you complete control on the light sources around your model using 
+  the Light Settings dialog box. You can open this dialog box by 
+  clicking the button on the View Settings toolbar or selecting Light Settings from the Tools menu.
+
+</p>
+    </div>
+    <div class="col-4">
+      <img src="Images/Light1.png" style="width:100%">
+    </div>
+  </div>
+
+ <hr>
+  The lighting color is further divided into three parts :
+<div class="row">
+  <div class="col-4">
+    <h4>Ambience</h4>
+    <p align="justify">
+      Represents how the model reflects light which is falling at it from all directions uniformly, 
+      as if modeling light from the sky.
+      <br>
+      <img src="Images/Ambience.png" style="width: 80%">
+
+    </p>
+  </div>
+  <div class="col-4">
+    <h4>Specular</h4>
+    <p align="juistify">
+      Represents how the model reflects light which is falling at it from a point source. 
+      This type of reflection is what best defines the 3D shape of a model.
+      <img src="Images/Specular.png" style="width: 80%">
+    </p>
+  </div>
+  <div class="col-4">
+    <h4>Position</h4>
+    <p>
+      Represents the position of the light source.
+    </p>
+  </div>
+</div>
+
+
+
+
+  </div>
+  <div class="modal-footer">
+    <div class="row  w-100 ">
+
+        <div class="col-auto me-auto">
+        <button class="btn btn-secondary " data-bs-target="#exampleModal22" data-bs-toggle="modal" onclick="pauseVid23();playVid22()">Previous</button>
+        </div>
+ 
+        <div class="col-auto">
+        <button class="btn btn-primary " data-bs-target="#exampleModal24" data-bs-toggle="modal" onclick="pauseVid23();playVid24()">Next Section</button>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div> 
+<!------------------------------------------------------------------------------------------------- Modal24-Color Settings --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal24" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Color Settings</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+    aria-label="Close"onclick="pauseVid24()" ></button>
+  </div>
+  <div class="modal-body">
+   <!-- <video id=" Video24" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+   src="LOSE FAT in 7 days (belly, waist & abs) _ 5 minute Home Workout.mp4" controls ></video> -->
+  <p>
+      In ELS you can color the objects appearing inside the viewer window according to your taste:
+      <ul>
+
+        <!-- <li style="margin-bottom:0px ;">
+          To color structural components like girders and slabs , click the small 
+          colored boxes beside their names in the Structure browser tree. ( <b>Image Here!</b> )
+        </li> -->
+        <li style="margin-bottom:0px ;">
+          To color just one slab or girder, not all of them, 
+          you can do so by using the Properties browser.(Type Color)
+          <br> <img src="Images/ColorProp.png" style="width:30%"> 
+        </li>
+        <li style="margin-bottom:0px ;">
+          To color non-structural objects (as boundaries, springs, and viewer background) 
+          or indicators (as element centroid and velocity vectors), 
+          use the Color Settings dialog box by clicking the button (<img src="Images/color.png" > ) or 
+          by selecting <b>Color Settings</b> from the Tools menu. 
+        </li>
+        <li>
+          To set the colors of the various materials available in your project, 
+          you can use the Material Types dialog box by selecting Material Types Browser 
+          and double-clicking any material type from the tree. 
+          The change applies to all objects that use this material.  <img src="Images/MaterialType.png" style="width:60%"> 
+        </li>
+
+      </ul> 
+
+
+  </p>
+
+
+  </div>
+  <div class="modal-footer">
+    <div class="row  w-100 ">
+
+      <div class="col-auto me-auto">
+      <button class="btn btn-secondary " data-bs-target="#exampleModal23" data-bs-toggle="modal" onclick="pauseVid24();playVid23()">Previous</button>
+      </div>
+
+      <div class="col-auto">
+      <button class="btn btn-primary " data-bs-target="#exampleModal25" data-bs-toggle="modal" onclick="pauseVid24();playVid25()">Next Section</button>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+</div>
+</div> 
+<!------------------------------------------------------------------------------------------------- Modal25-Drawing Size --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal25" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Drawing Size</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+    aria-label="Close"onclick="pauseVid25()" ></button>
+  </div>
+  <div class="modal-body">
+   <!-- <video id=" Video24" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+   src="LOSE FAT in 7 days (belly, waist & abs) _ 5 minute Home Workout.mp4" controls ></video> -->
+   <p>
+    In ELS's Viewer, you <b>cannot change</b>  the dimensions of structural components, 
+    as it is just a viewer reflecting the results of a model created by the modeler.
+   However, you <b>can change</b> the dimensions of visual indicators for springs, contacts, cracks, etc.
+   For example, if you feel that element centroids are too small or that matrix springs are too large, 
+   you can change their drawing sizes (their apparent sizes) by using the <b>Drawing Size Settings</b>  
+   dialog box of the Tools menu
+   <br>You can change the drawing size of any object by typing a number 
+   (percentage of the default size) in its corresponding Value (%) cell. 
+   Indicators are drawn with sizes relative to the average problem element dimensions or 
+   to the element to which they belong. For example:
+   <ul>
+    <li style="margin-bottom:0px ;">
+      Contacts' sizes are relative to the overall average model size since they do not speak for just one element.
+    </li>
+    <li style="margin-bottom:0px ;">
+      Springs' lengths are relative to their respective element dimensions.
+    </li>
+   </ul>
+ <img src="Images/DrawingSize.png" style="width:30%">
+ <p>
+  The number in the Average Element Radius text box is the value to which all dimensions 
+  in the dialog are related. This value is <b>not editable</b>.
+ </p>
+
+
+
+</p>
+  </div>
+  <div class="modal-footer">
+    <div class="row  w-100 ">
+
+        <div class="col-auto me-auto">
+        <button class="btn btn-secondary " data-bs-target="#exampleModal24" data-bs-toggle="modal" onclick="pauseVid25();playVid24()">Previous</button>
+        </div>
+ 
+        <div class="col-auto">
+          <button class="btn btn-primary " data-bs-target="#exampleModal26" data-bs-toggle="modal" onclick="pauseVid25();playVid26()">Next Section</button>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+<!------------------------------------------------------------------------------------------------- Modal26-Camera --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal26" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Camera Manager</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+    aria-label="Close"onclick="pauseVid26()" ></button>
+  </div>
+  <div class="modal-body">
+   <!-- <video id=" Video24" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+   src="LOSE FAT in 7 days (belly, waist & abs) _ 5 minute Home Workout.mp4" controls ></video> -->
+<p>
+  ELS Results Viewer enables you to move through the structure to select a certain scene at a certain frame. 
+    With Camera manager, you can see the interior parts of the structural components.
+  You can change the camera position along with the camera's angle (horizontal and vertical).
+In addition to that, you can explore hidden interior Contours created for structural components through
+the camera manger option.
+<br>
+ <img src="Images/viewer/camera-manager/camera-manager.png"> 
+ <br>
+  Check the activate option then you can change the Horizontal and vertical camera angles
+  and also change the camera position to move through the structure.
+
+ 
+</p>
+
+
+  </div>
+  <div class="modal-footer">
+    <div class="row  w-100 ">
+
+      <div class="col-auto me-auto">
+      <button class="btn btn-secondary " data-bs-target="#exampleModal25" data-bs-toggle="modal" onclick="pauseVid26();playVid25()">Previous</button>
+      </div>
+
+      <div class="col-auto">
+      <button class="btn btn-primary " data-bs-target="#exampleModal27" data-bs-toggle="modal" onclick="pauseVid26();playVid27()">Next Section</button>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+<!------------------------------------------------------------------------------------------------- Modal27-Objects --------------------------------------------------------------------------->
+<div class="modal fade" 
+id="exampleModal27" 
+tabindex="-1" 
+aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">Objects' Settings</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" 
+    aria-label="Close"onclick="pauseVid27()" ></button>
+  </div>
+  <div class="modal-body">
+    <!---------------------------------------------------------------------------- TOAST ---------------------------------------------------------------------------------->
+
+    <div class="toast fade show" id="myToast">
+      <div class="toast-header">
+          <strong class="me-auto"><i class="bi-gift-fill"></i> Keep Scrolling!</strong>
+          <!-- <small>10 mins ago</small> -->
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body">
+          Click on the right or the left
+          <a href="#O1" style="color:rgba(196, 42, 149, 0.89) ;">
+     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
+         </svg>
+        </a>
+        <a href="#O2" style="color:rgba(196, 42, 149, 0.89) ;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 9h8v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z"></path>
+       </svg>
+        </a>
+       to navigate through the different Objects' Settings.
+       
+      </div>
+  </div>
+
+<!---------------------------------------------------------------------------- TOAST ---------------------------------------------------------------------------------->
+
+   <!-- <video id=" Video24" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+   src="LOSE FAT in 7 days (belly, waist & abs) _ 5 minute Home Workout.mp4" controls ></video> -->
+
+<!---------------------------------------------------------------------------------------- Carousel ------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------- Elements ------------------------------------------------------------------------------------->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+    
+              <div class="p-3 mb-2 bg-success text-dark bg-opacity-10" style="margin-left:100px ;margin-right:100px ;">
+         
+              <h4 > Elements</h4>
+       
+                <p align="justify">
+                  When defining a problem in ELS, structural components are broken into smaller building blocks
+                   referred to as matrix springs or mesh elements & here we're discussing the different display modes 
+                   and options that can be performed on these elements.
+                </p>
+                   <hr>
+                   <h5>Elements' View Modes</h5>
+                   <p align="justify">
+                    ELS enables you to choose which element(s) material(s), object(s) type 
+                    and at which level(s) to show/hide. 
+                    In addition to that, ELS has 3 different rendering modes to view elements in : 
+                   <b>Solid</b> , <b>Shrink</b> , or <b>Wireframe</b>:
+                   <ul>
+                      <li style="margin-bottom:0px ;">
+                        In the <b>Solid</b>  mode, all surfaces are rendered and colored. <img src="Images/Solid.png" alt="">
+                      </li>
+                      <li style="margin-bottom:0px ;">
+                        In the <b>Wireframe</b>  mode, only the outer frames of elements are displayed 
+                        without the surfaces being rendered. <img src="Images/Wire.png" alt="">
+                      </li>
+                      <li style="margin-bottom:0px ;">
+                        In the <b>Shrink (Elements) </b> mode, individual elements are virtually separated 
+                        but without sacrificing their solid look. 
+                        This is done by drawing elements at 90 % of their original size, 
+                        hence emphasizing the interfaces between elements. 
+                         <img src="Images/Shrink.png" alt=""> 
+                      </li>
+                   </ul>
+                   </p>
+                   <p>
+                      <b>Note that:</b>  It is possible to activate both the <b>Shrink</b> & the <b>Wireframe</b>  
+                      modes together.<img src="Images/Wire_Shrink.png" alt="">
+                   </p>
+                   <p>
+                      While the <b>Solid</b>  mode enables you to better visualize the structure:
+                      <ul>
+                        <li style="margin-bottom:0px ;">
+                        The <b>Wireframe</b> mode enables you to see elements that are normally hidden behind other elements; 
+                        it does this without hiding the elements obstructing the view. 
+                        </li>
+                        <li style="margin-bottom:0px ;">
+                        The <b>Wireframe</b> mode also makes it easy to differentiate between individual elements 
+                        and adjacent ones, something that is not possible in solid mode.
+                        </li>
+                      </ul>
+                    </p>
+                    <p align="justify">
+                      You can select the element display mode from:
+                      <ul>
+                        <li style="margin-bottom: 0px;">
+                          The Problem Features menu. <img src="Images/ProbFeatures_Elements.png" alt=""> <img src="Images/ProbFeatures_Elements_WS.png" style="margin-top:-150px ;" >
+                        </li>
+                        <li style="margin-bottom: 0px;">
+                          The buttons on of toolbar: ( <img src="Images/Solid_Wire.png" alt=""> )toggles between solid and wireframe modes,
+                          while ( <img src="Images/Normal_Shrink.png" alt=""> )toggles between shrink and normal size modes or use Show elements dialog.
+                        </li>
+                      </ul>
+                        
+                    
+                    </p>
+                    
+                    <h5>Elements' Opacity</h5>
+                    <p align="justify">
+                      You can set the Opacity option for clear the view from the Property of the selected 
+                      object. The opacity ranges from 1 to 10: ( <img src="Images/Opacity.png" alt=""> )
+                      <ul>
+                        <li style="margin-bottom: 0px;">
+                          (1) means it will appear totally transparent. 
+                        </li>
+                        <li style="margin-bottom: 0px;">
+                          (10) means that the object will appear totally opaque. 
+                        </li>
+                      </ul>
+                    </p>
+                    
+ 
+                  <h5>Elements' IDs</h5>
+                  <p align="justify">
+                    Every element is given a unique ID number in ELS which can be displayed by 
+                    clicking the button. ( <img src="Images/ID.png" alt=""> )
+                  </p>
+
+                  <h5>Elements' Centroids</h5>
+                  <p align="justify">
+                    To view just all the elements' centroids click the button on the Problem Features toolbar 
+                    or check them from the Show Elements.( <img src="Images/Centroids.png" alt=""> )
+                  </p>
+
+
+                  <h5>Elements' Visibility</h5>
+                  <p align="justify">
+                    You can toggle the display of all elements on or off, view outer elements, 
+                    or outer surfaces from the Problem Features menu 
+                    or by clicking the arrow beside the button in the Problem Features toolbar 
+                    or Show Elements Dialog. <img src="Images/ProbFeatures_Elements.png" alt=""> <img src="Images/ProbFeatures_Elements_WS.png" style="margin-top:-150px ;" >
+                  </p>
+
+                  <h5>Elements' Color</h5>
+                 <p align="justify">
+                  While it is not possible to change the color of an individual element, 
+                  you can set the color with all the display modes for an individual structural component 
+                  or all components of a specific type by using the Structure browser. <img src="Images/ColorProp.png" alt="">
+                 </p>
+
+
+             
+     
+            </div>
+            </div>
+                <!---------------------------------------------------------------------------------------- Springs & Link Members ------------------------------------------------------------------------------------->
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class="p-3 mb-2 bg-info text-dark bg-opacity-10" style="margin-left:100px ;margin-right:100px ;">
+         
+                <h4 name="O2" , id="O2"> Springs & Link Members</h4>
+                <p align="justify">
+                  Springs are generated by ELS's Solver as part of the AEM 
+                  (Applied Element Method). 
+                  There are three types of springs: matrix, steel, and RFT springs. 
+                  They are not displayed by default as they normally exist in large numbers 
+                  and viewing them requires large processing power. 
+                </p>
+                <p>
+                  You can show or hide springs:
+                  <ul>
+                    <li style="margin-bottom: 0px;">
+                      From the Problem Features menu.
+                    </li>
+                    <li style="margin-bottom: 0px;">
+                      From their display button which opens the Show/hide Springs Settings dialog  
+                  then, from the Springs Materials Settings and levels, check  which springs to show.
+                 
+                    </li>
+                    <li style="margin-bottom: 0px;">
+                      From the right click menu of Structure Browser, 
+                      select which type of springs to show. 
+
+                    </li>
+                  </ul>
+                </p>
+                <h4>Link Members</h4>
+                <p align="justify">
+                  Link members on the other hand, are displayed by default and can be hidden by de-selecting the option from the 
+                  right-click menu of the Structure browser.
+                </p>
+               
+                <h4>Springs' Visual Properties</h4>
+                <p align="justify">
+                  Link members on the other hand, are displayed by default and can be hidden by de-selecting the option from the 
+                  right-click menu of the Structure browser.
+                </p>
+                  Changing the colors and drawing size of springs can be performed from 
+                  the Material tree or from the Structure browser Spring tab.
+                   Also, the drawing sizes can be changed from the properties of 
+                   the object   (Properties Browser)           
+                  </p>
+    
+            </div>
+            </div>
+    
+        <!---------------------------------------------------------------------------------------- Boundaries ------------------------------------------------------------------------------------->
+            <div class="carousel-item">
+              <div class="p-3 mb-2 bg-dark text-dark bg-opacity-10" style="margin-left:100px ;margin-right:100px ;">
+         
+              <h4 name="O1" , id="O1"> Boundaries</h4>
+              <p align="justify">
+                Boundaries are surfaces within the simulation that are used to confine the movement 
+                of elements in the analysis to a more realistic setting. 
+                For example, the ground on which a structure is built is usually modeled as a bottom boundary.
+                </p>
+                <p align="justify">
+                The use of boundaries reduces the analysis time and optimizes your results. While they are only
+                set when defining a problem in ELS's Modeler, in ELS's Viewer, 
+                you can still change their display settings.
+                <ul>
+                  <li style="margin-bottom: 0px;">
+                    To change boundaries' colors or transparencies, use the Color Settings.
+                  </li>
+                  <li style="margin-bottom: 0px;">
+                    To show or hide any boundary, use the Problem Features menu or Boundaries 
+                    toolbar to toggle the display of all ( <img src="Images/BAll.png"> ), front(<img src="Images/BFront.png">), 
+                    back(<img src="Images/BBack.png">), left (<img src="Images/BLeft.png">), 
+                    right (<img src="Images/BRightt.png">), 
+                    top ( <img src="Images/BTop.png"> ), bottom ( <img src="Images/BBottom.png"> ),
+                    and irregular ( <img src="Images/BIrregular.png" style="width:20px"> ),
+                    boundaries and wire frame mode ( <img src="Images/BWire.png"> ).
+                  </li>
+                </ul>
+                
+               
+              </p>
+    
+            </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+
+
+
+
+  </div>
+  <div class="modal-footer">
+    <div class="row  w-100 ">
+
+        <div class="col-auto me-auto">
+        <button class="btn btn-secondary " data-bs-target="#exampleModal26" data-bs-toggle="modal" onclick="pauseVid27();playVid26()">Previous</button>
+        </div>
+ 
+        <div class="col-auto">
+        <button class="btn btn-primary " data-bs-dismiss="modal" aria-label="Close"onclick="pauseVid27()">Close</button>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+<!------------------------------------------------------------------------------------------------- Modal End For Display --------------------------------------------------------------------------->
+
+<!-- <a href="" style="font-size:20px; color:rgb(45, 117, 49) ;">Explore Features &#8608;</a> -->
+
+
+  </div>
+ 
+</div>
+
+<div class="col-lg-6 col-md-12">
+  <img  
+  src="properties.gif" style="width:100%;height: 100%;">
+     </img>
+
+    </div>
+    </div>
+
+
+
+
+<!---------------------------------------------------------------------------------- Markers ----------------------------------------------------------------------->
+
+<div class="row border m-5">
+  <div class="col-lg-6 col-md-12">
+    <img  
+    src="Marker.gif" style="width:100%;">
+      </img>
+      </div>
+
+  <div class="col-lg-6 col-md-12" >
+    <div class="container p-5">
+      <h2 id="A3", name="A3">Markers</h2>
+      <p style="color:#47476b;">ELS's Viewer enables you to insert markers in exported bitmap and AVI files. 
+        You can use such markers to indicate important events or to display information during video playback. </p>
+    <p>
+    <ul>
+      <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal31"onclick="playVid31()"> Types<img src="text.gif" style="width:45px"></img>
+    </button></li>
+    
+    <li> <button type="button" class="btn btn-bd-secondary "
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal32"onclick="playVid32()"> Properties<img src="text.gif" style="width:45px"></img>
+    </button></li>
+
+    </ul>
+    </p>
+
+<!------------------------------------------------------------------------------------------------- Modal1 --------------------------------------------------------------------------->
+    <div class="modal fade" 
+    id="exampleModal31" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Markers' Types</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" 
+            aria-label="Close"onclick="pauseVid31()"></button>
+          </div>
+          <div class="modal-body">
+           <!-- <video id=" Video" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+           src="Final Videos/Pan.mp4" controls ></video> -->
+
+    <p>
+
+      There are three types of markers:
+      <br> <b>Symbol, Text, & Image</b>. 
+      <h4>Symbol Markers</h4>
+      <p>
+        They are available in six different shapes: Circle( ), Diamond ( ), 
+        Square ( ), Cross( ), Plus Sign ( ), and Triangle ( ). 
+
+      </p> 
+
+      <h4>Text & Image Markers</h4>
+      <p>
+        As their names imply, they enable you to use text and figures as markers.
+      </p>
+        Clicking the Insert Text Marker button ( ) opens a dialog box which prompts you for the text to display, 
+        and clicking the Insert Image Marker button ( ) opens a dialog box to choose the image file to insert as a marker.
+      
+      <p>
+      You can change the color and rotation of a marker, together with other 
+      properties in one of two ways, using the Markers browser or Properties browser.
+
+      <br>To use the Properties browser for that purpose, you will have to select the markers first by using the Select Markers button (). 
+      You can select multiple markers and change their properties all at once by using the Properties browser.
+      The other method of editing marker properties is using the Markers browser. Some marker properties are common between all types and others are type-specific. 
+    </p>
+    
+          </div>
+          <div class="modal-footer">            
+            <button class="btn btn-primary" data-bs-target="#exampleModal32" data-bs-toggle="modal" onclick="pauseVid31();playVid32()">Next Section</button>
+       
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!------------------------------------------------------------------------------------------------- Modal2 --------------------------------------------------------------------------->
+    <div class="modal fade" 
+    id="exampleModal32" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Markers' Properties</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" 
+            aria-label="Close"onclick="pauseVid32()"></button>
+          </div>
+          <div class="modal-body">
+           <!-- <video id=" Video" style="display:inline;margin:0 auto ;width:100% ;height:100%" 
+           src="Final Videos/Pan.mp4" controls ></video> -->
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Description</th>
+        <th scope="col">Notes</th>
+    
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <th scope="row">Name</th>
+        <td>Displays marker name</td>
+        <td rowspan="3" style="vertical-align: middle">These properties cannot be changed.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Layer</th>
+        <td>Displays the layer to which the marker belongs.</td>
+  
+      </tr>
+      <tr>
+        <th scope="row">Shape</th>
+        <td >Displays the marker type.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Color</th>
+        <td >Enables you to change the marker color.</td>
+        <td rowspan="6" style="vertical-align: middle">
+          These properties exist for all marker types, and can be changed from both Properties and Markers browsers.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Scale</th>
+        <td> Enables you to change the marker size.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">From</th>
+        <td >Frame number at which marker starts to appear.</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">To</th>
+        <td >Frame number at which marker ceases to appear..</td>
+     
+      </tr>
+      <tr>
+        <th scope="row">X,Y</th>
+        <td >Coordinates of the marker location on the screen, with (0,0) being the top-left of the screen. 
+          To move the marker to a new position without having to enter the coordinates explicitly, 
+          click the () button inside the X,Y field in the Properties browser.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Rotation</th>
+        <td >Enables you to rotate the marker by typing the rotation angle in degrees.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Text</th>
+        <td >Enables you to edit the marker text.</td>
+        <td rowspan="2" style="vertical-align: middle">
+          These properties exist only for text markers, and can be changed from the Properties browser only.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Font</th>
+        <td >Enables you to change the text font in use.
+        </td>
+     
+      </tr>
+
+      <tr>
+        <th scope="row">Image</th>
+        <td>Displays the path of the source image file.</td>
+        <td rowspan="4" style="vertical-align: middle">
+          These properties exist only for image markers, and can be changed from the Properties browser only.
+        </td>
+     
+      </tr>      
+
+      <tr>
+        <th scope="row">Width</th>
+        <td>Displays the image width.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Height</th>
+        <td>Displays the image height.
+        </td>
+     
+      </tr>
+      <tr>
+        <th scope="row">Background color</th>
+        <td>Sets the background of the image.
+        </td>
+     
+      </tr>
+    </tbody>
+  </table>
+    
+          </div>
+
+
+          <div class="modal-footer">
+            <div class="row  w-100 ">
+        
+                <div class="col-auto me-auto">
+                <button class="btn btn-secondary " data-bs-target="#exampleModal3" data-bs-toggle="modal" onclick="pauseVid32();playVid31()">Previous</button>
+                </div>
+         
+                <div class="col-auto">
+                <button class="btn btn-primary " data-bs-dismiss="modal" aria-label="Close"onclick="pauseVid32()">Close</button>
+                </div>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+     <!------------------------------------------------------------------------------ Scripts ------------------------------------------------------------>
+    <script>
+
+      var vid1 = document.getElementById(" Video");  
+      function playVid1() { 
+          vid1.play();}   
+      function pauseVid1() { 
+          vid1.pause();} 
+
+
+      var vid2 = document.getElementById(" Video2"); 
+      function playVid2() { 
+          vid2.play(); } 
+      function pauseVid2() { 
+          vid2.pause();} 
+
+      
+      var vid3 = document.getElementById(" Video3"); 
+      function playVid3() { 
+          vid3.play();} 
+      function pauseVid3() { 
+          vid3.pause();} 
+
+
+      var vid4 = document.getElementById(" Video4");     
+      function playVid4() { 
+          vid4.play();} 
+      function pauseVid4() { 
+          vid4.pause();} 
+
+
+
+
+//////////////////////////////Next Section/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+     var vid21 = document.getElementById(" Video21"); 
+      
+      function playVid21() { 
+          vid21.play(); 
+      } 
+      
+      function pauseVid21() { 
+          vid21.pause(); 
+      } 
+
+
+      var vid22 = document.getElementById(" Video22"); 
+      
+      function playVid22() { 
+          vid22.play(); 
+      } 
+      
+      function pauseVid22() { 
+          vid22.pause(); 
+      } 
+
+
+      
+      var vid23 = document.getElementById(" Video23"); 
+      
+      function playVid23() { 
+          vid23.play(); 
+      } 
+      
+      function pauseVid23() { 
+          vid23.pause(); 
+      } 
+
+
+      var vid24 = document.getElementById(" Video24"); 
+      
+      function playVid24() { 
+          vid24.play(); 
+      } 
+      
+      function pauseVid24() { 
+          vid24.pause(); 
+      } 
+
+
+      var vid25 = document.getElementById(" Video25"); 
+      
+      function playVid25() { 
+          vid25.play(); 
+      } 
+      
+      function pauseVid25() { 
+          vid25.pause(); 
+      } 
+
+
+      var vid26 = document.getElementById(" Video26"); 
+      
+      function playVid26() { 
+          vid26.play(); 
+      } 
+      
+      function pauseVid26() { 
+          vid26.pause(); 
+      } 
+
+
+      var vid27 = document.getElementById(" Video27"); 
+      
+      function playVid27() { 
+          vid27.play(); 
+      } 
+      
+      function pauseVid27() { 
+          vid27.pause(); 
+      } 
+
+// Get the modals
+var modalA = document.getElementById('exampleModal1');
+var modal = document.getElementById('exampleModal2');
+var modal1 = document.getElementById('exampleModal3');
+var modal2 = document.getElementById('exampleModal4');
+var modalA2 = document.getElementById('exampleModal21');
+var modal22 = document.getElementById('exampleModal22');
+var modal21 = document.getElementById('exampleModal23');
+var modal22 = document.getElementById('exampleModal24');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  //alert(event.target)
+    if (event.target == modal) {
+      vid2.pause();
+    } 
+  if(event.target == modalA) {
+    vid1.pause();     
+     }
+  if(event.target == modal1) {
+    vid3.pause();     
+  }
+  if(event.target == modal2) {
+    vid4.pause();     
+  }
+  if (event.target == modalA2) {
+      vid21.pause();
+    } 
+  if(event.target == modal21) {
+    vid23.pause();     
+  }
+  if(event.target == modal22) {
+    vid24.pause();     
+  }    
+}
+
+
+      
+</script>
+</body>
+</html>

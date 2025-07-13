@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> EBCs </title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="../../Styles.css"/>
+  </head>
+  <body>
+
+    <div id="main">
+      <p class="zoom2"> <span  style="color: #0088cc;font-size:1.1vw;cursor:pointer" onclick="openNav()"><b>&#9776; Quick Start Guide Navigation</b></span>
+        <h1>Elastic Boundary Conditions</h1>
+
+
+              <p style="text-align:center;font-size:1.1vw">  In real life, ideal boundary conditions do not always exist and structures are supported by partial motion restrains that we approximate into
+                a pinned or a fixed support. But what if you wanted a better approximation?
+                <br>  <i  style="color:#47476b">In version 9, ELS has made this possible by providing the new feature: Elastic Boundary Conditions which enables you to model any BC in the form of
+                a spring of adjustable stiffness in translation as well as rotation.</i></p>
+
+      <p style="text-align:center">
+
+    </p>
+
+     <div id="light">
+         <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+
+             <video id="VisaChipCardVideo" style="display:inline;margin:0 auto ;width:100% ;height:100%" controls>
+             <source src="EBCs.mp4" type="video/mp4">
+           Browser does not support <video> tag
+           </video>
+         </div>
+           <div id="fade" onClick="lightbox_close();"></div>
+
+           <div>
+               <a href="#" onclick="lightbox_open();"><img src="EBCs.png" alt="HTML tutorial" style="display:block;margin:0 auto ;width:60% ;height:60%"> </a>
+           </div>
+
+           <p style=" font-size:18px; color:#47476b">
+           Let’s have a look at this amazing enhancement:
+           We’ll be modeling two pinned-free one dimensional elements one with a support having a rotational stiffness and the other having a support of translational stiffness at its free end.
+</P>
+     <p style=" font-size:18px">
+       <b>Step1:</b>
+ Remove the ground to enable a pendulum-like motion
+</br>
+<b>Step2:</b>
+Draw a pinned-free beam
+</br>
+<b>Step3:</b>
+Select one of the beam ends
+</br>
+<b>Step4:</b>
+Convert the loading stage to dynamic and increase the stage duration
+
+</br>
+<b>Step5:</b>
+Now assign a pinned restraint
+</br>
+<b>Step6:</b>
+Replicate the beam to have a total of 3 beams
+
+</br>
+<b>Step7:</b>
+ Select the free-end of one of them.
+
+</br>
+<b>Step8:</b>
+Open the Loading scenario dialog box, choose EBC’s
+
+</br>
+<b>Step9:</b>
+Assign a displacement stiffness in the z direction.
+
+</br>
+<b>Step10:</b>
+select the pinned end of one of the other beams,
+</br>
+<b>Step11:</b>
+and follow the same procedures but this time assign rotation stiffness around the Y-direction.
+
+</br>
+<b>Step12:</b>
+Run the analysis and open the results’ viewer.
+</br>
+<b>Step13:</b>
+Run the animation & watch the variation in the 3 beams' motion.
+</br>
+
+To better observe the differences, draw a chart showing the displacement Z of the outermost element of the 3 beams vs time
+</br>
+As we see, the motion is converted to a semi-restrained semi-free motion which represents most of the realistic structural restraints.
+</p>
+       </div>
+     </p>
+
+
+
+</div>
+
+     </div>
+
+  </div>
+
+
+
+  <!-------------------------------------------------------- Side Nav ----------------------------------------------------------------------------->
+
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../../Total.html#A" target="_blank" style="text-align:center; font-size:30px">QSG</a>
+
+    <a href="../../../Total.html#A1" target="_blank" style=" font-size:20px"> &#9684; Why ELS?</a>
+    <a class="dropdown-btn" style="margin-Left:220px; margin-top:-34px ;font-size:11px">&#9660</a>
+      <div class="dropdown-container">
+        <a href="../../../Total.html#A11" target="_blank"> &#8669;&#160;&#160;Most Notable Features</a>
+
+        <a href="../../../NewFeatures.html"target="_blank"> &#8669;&#160;&#160;What's New in Versoin 9</a>
+          <a class="dropdown-btn" style="margin-Left:250px; margin-top:-34px ;font-size:11px">&#9660</a>
+            <div class="dropdown-container">
+
+                <a href="CircCol.html"> &#10547;&#160;&#160;Circular Columns</a>
+                <a href="../Equations/Eqs.html"target="_blank"> &#10547;&#160;&#160;Filteration Equations</a>
+                <a href="../Drafts/Drafts.html"target="_blank"> &#10547;&#160;&#160;Drafts</a>
+                <a href="../LumpedDamping/LumpedDamping.html"target="_blank"> &#10547;&#160;&#160;Lumped Damping</a>
+                <a href="../Materials/Materials.html"target="_blank"> &#10547;&#160;&#160;Materials</a>
+                <a href="../ContactFiller/ContactFiller.html"target="_blank"> &#10547;&#160;&#160;Contact Filler</a>
+                <a href="../EBCs/EBCs.html"target="_blank" style="font-size:16px"> &#10547;&#160;&#160;Elastic Boundary Conditions</a>
+                <a href="../LinksDamping/LinksDamping.html"target="_blank"> &#10547;&#160;&#160;Links Damping</a>
+
+          </div>
+          </div>
+
+
+  <a href="../../../Total.html#A2"target="_blank" style=" font-size:20px">  &#9681; Before You Start</a>
+    <a class="dropdown-btn" style="margin-Left:220px; margin-top:-34px ;font-size:11px">&#9660</a>
+      <div class="dropdown-container">
+        <a href="../../../Total.html#A21" target="_blank"> &#8669;&#160;&#160;System Requirements</a>
+        <a href="../../../Total.html#A22" target="_blank"> &#8669;&#160;&#160;ELS Installation & Setup</a>
+        <a href="../../../Total.html#A23" target="_blank"> &#8669;&#160;&#160;The Main Process</a>
+      </div>
+  <a href="../../../Total.html#A3" target="_blank" style=" font-size:20px"> &#9685; Finding Your Way Through ELS</a>
+    <a class="dropdown-btn" style="margin-Left:220px; margin-top:-34px ;font-size:11px">&#9660</a>
+
+      <div class="dropdown-container">
+
+        <a href="../../../User Interface.html#A"target="_blank"> &#8669;&#160;&#160;User Interface</a>
+          <a class="dropdown-btn" style="margin-Left:250px; margin-top:-34px ;font-size:11px">&#9660</a>
+        <div class="dropdown-container">
+          <a href="../../../User Interface.html#A1"target="_blank"> &#10547;&#160;&#160;ELS Modeler</a>
+          <a class="dropdown-btn" style="margin-Left:250px; margin-top:-34px ;font-size:11px">&#9660</a>
+        <div class="dropdown-container">
+            <a href="../../../User Interface.html#A11"target="_blank"> &#10551;&#160;&#160;Menus</a>
+            <a href="../../../User Interface.html#A12"target="_blank"> &#10551;&#160;&#160;Browsers</a>
+        </div>
+      </div>
+
+      <a href="../../../Modeling a Basic Structure.html"target="_blank"> &#8669;&#160;&#160;Modelling Essentials</a>
+      <a class="dropdown-btn" style="margin-Left:250px; margin-top:-34px ;font-size:11px">&#9660</a>
+    <div class="dropdown-container">
+      <a href="../../../Modeling a Basic Structure.html#A1"target="_blank"> &#10547;&#160;&#160;Set up a Project</a>
+      <a href="../../../Modeling a Basic Structure.html#A3"target="_blank"> &#10547;&#160;&#160;Grid & Snap</a>
+      <a class="dropdown-btn" style="margin-Left:240px; margin-top:-34px ;font-size:11px">&#9660</a>
+    <div class="dropdown-container">
+        <a href="../../../Modeling a Basic Structure.html#A31"target="_blank"> &#10551;&#160;&#160;Grid</a>
+        <a href="../../../Modeling a Basic Structure.html#A32"target="_blank"> &#10551;&#160;&#160;Snap</a>
+    </div>
+      <a href="../../../Modeling a Basic Structure.html#A2"target="_blank"> &#10547;&#160;&#160;Structure's Skeleton</a>
+      <a class="dropdown-btn" style="margin-Left:240px; margin-top:-34px ;font-size:11px">&#9660</a>
+    <div class="dropdown-container">
+        <a href="../../../Modeling a Basic Structure.html#A21"target="_blank"> &#10551;&#160;&#160;Styles</a>
+        <a href="../../../Modeling a Basic Structure.html#A22"target="_blank"> &#10551;&#160;&#160;Materials</a>
+        <a href="../../../Modeling a Basic Structure.html#A23"target="_blank"> &#10551;&#160;&#160;Model the Structure</a>
+    </div>
+    <a href="../../../Modeling a Basic Structure.html#A4"target="_blank"> &#10547;&#160;&#160;Loads</a>
+    <a href="../../../Modeling a Basic Structure.html#A5"target="_blank"> &#10547;&#160;&#160;Replicate</a>
+
+    </div>
+          <a href="../../../Analysis.html"target="_blank"> &#8669;&#160;&#160;Analysis & Results</a>
+          <a class="dropdown-btn" style="margin-Left:250px; margin-top:-34px ;font-size:11px">&#9660</a>
+        <div class="dropdown-container">
+            <a href="../../../Analysis.html#A1"target="_blank"> &#10551;&#160;&#160;SA's</a>
+            <a href="../../../Analysis.html#A2"target="_blank"> &#10551;&#160;&#160;Results Extraction</a>
+        </div>
+      </div>
+
+  <a href="../../../Total.html#A4" style=" font-size:20px;">&#9673; Technical Support</a>
+    <a class="dropdown-btn" style="margin-Left:220px; margin-top:-34px ;font-size:11px">&#9660</a>
+      <div class="dropdown-container">
+        <a href="../../../Total.html#A41"target="_blank"> &#8669;&#160;&#160;Service & Support</a>
+        <a href="../../../Total.html#A42"target="_blank"> &#8669;&#160;&#160;Contact Technical Support</a>
+        <a href="../../../Total.html#A43"target="_blank"> &#8669;&#160;&#160;Contact ASI</a>
+      </div>
+
+
+      <!--lightbox thing for the viedo start -->
+      <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+    window.document.onkeydown = function(e) {
+      if (!e) {
+        e = event;
+      }
+      if (e.keyCode == 27) {
+        lightbox_close();
+      }
+    }
+
+    function lightbox_open() {
+      var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+      window.scrollTo(0, 0);
+      document.getElementById('light').style.display = 'block';
+      document.getElementById('fade').style.display = 'block';
+      lightBoxVideo.play();
+    }
+
+    function lightbox_close() {
+      var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+      document.getElementById('light').style.display = 'none';
+      document.getElementById('fade').style.display = 'none';
+      lightBoxVideo.pause();
+    }
+    </script>
+
+    <!--lightbox thing for the viedo end -->
+
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "300px";
+        document.getElementById("main").style.marginLeft = "400px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+
+    <!--lightbox thing for Menu -->
+      <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {if (event.target == modal) {  modal.style.display = "none";    }  }
+        </script>
+
+          <script>
+     var modal2 = document.getElementById('id02');
+      window.onclick = function(event) {if (event.target == modal2) {  modal2.style.display = "none";    }  }
+      </script>
+
+      </body>
+      </html>

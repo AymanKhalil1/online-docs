@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contours</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+
+
+    <style>
+
+
+      .zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.15); /* IE 9 */
+  -webkit-transform: scale(1.15); /* Safari 3-8 */
+  transform: scale(1.15);}
+
+
+  b{color: rgb(48, 6, 48);}
+.accordion-button{font-size: 20px;}
+.icon{width:30px; 
+      height:30px;}
+.sub1{margin-left: 10px;}
+.sub2{margin-left: 20px;}
+ 
+      img{
+          cursor: pointer;
+      }
+      .btn-bd-secondary {
+--bs-btn-font-weight: 400;
+--bs-btn-font-size: 30px;
+/* --bs-btn-font-weight: 600; */
+--bs-btn-color: var(--bs-black);
+--bs-btn-bg: var(--bd-violet); 
+--bs-btn-border-color: var(--bd-violet);
+ /*--bs-btn-border-radius: .5rem; 
+ --bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)}; */
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)}; 
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+.btn-bd-primary {
+--bs-btn-font-weight: 600;
+--bs-btn-color: var(--bs-white);
+--bs-btn-bg: var(--bd-violet);
+--bs-btn-border-color: var(--bd-violet);
+--bs-btn-border-radius: .5rem;
+--bs-btn-hover-color: var(--bs-white);
+--bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+--bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+--bs-btn-active-color: var(--bs-btn-hover-color);
+--bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+--bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+
+[class*="col"]{
+  padding: 1rem;
+  }
+  p, li{font-size:18px}
+  a{color:black;
+  text-decoration: none;}
+  .shadow {
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+
+  .bg-mint { background-color: #54d1e3;}
+  .border-mint { border-color: #36bded;}
+  .link:hover{color:  #54d1e3;}
+   a:hover{color:  #54d1e3;}
+   .button:hover {color:  black; }
+
+/* Breadcrumbs */
+.cd-breadcrumb, .cd-multi-steps {
+  width: 90%;
+  max-width: 768px;
+  padding: 0.5em 1em;
+  margin: 1em auto;
+  background-color: #edeff0;
+  border-radius: .25em;
+}
+.cd-breadcrumb::after, .cd-multi-steps::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-breadcrumb li, .cd-multi-steps li {
+  display: inline-block;
+  
+  margin: 0.5em 0;
+}
+.cd-breadcrumb li::after, .cd-multi-steps li::after {
+  /* this is the separator between items */
+  display: inline-block;
+  content: '\00bb';
+  margin: 0 .6em;
+  color: #959fa5;
+}
+.cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
+  /* hide separator after the last item */
+  display: none;
+}
+.cd-breadcrumb li > *, .cd-multi-steps li > * {
+  /* single step */
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #2c3f4c;
+}
+.cd-breadcrumb li.current > *, .cd-multi-steps li.current > * {
+  /* selected step */
+  color: #1a75ff;
+}
+.no-touch .cd-breadcrumb a:hover, .no-touch .cd-multi-steps a:hover {
+  /* steps already visited */
+  color: #1a75ff;
+}
+.cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {
+  /* replace the default separator with a custom icon */
+  content: '';
+  height: 16px;
+  width: 16px;
+  background: url(https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/img/cd-custom-separator.svg) no-repeat center center;
+  vertical-align: middle;
+}
+.cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li > *::before {
+  /* add a custom icon before each item */
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: .4em;
+  margin-top: -2px;
+  background: url(https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/img/cd-custom-icons-01.svg) no-repeat 0 0;
+  vertical-align: middle;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {
+  /* change custom icon using image sprites */
+  background-position: -20px 0;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(3) > *::before {
+  background-position: -40px 0;
+}
+.cd-breadcrumb.custom-icons li:not(.current):nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(4) > *::before {
+  background-position: -60px 0;
+}
+.cd-breadcrumb.custom-icons li.current:first-of-type > *::before, .cd-multi-steps.custom-icons li.current:first-of-type > *::before {
+  /* change custom icon for the current item */
+  background-position: 0 -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(2) > *::before {
+  background-position: -20px -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(3) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(3) > *::before {
+  background-position: -40px -20px;
+}
+.cd-breadcrumb.custom-icons li.current:nth-of-type(4) > *::before, .cd-multi-steps.custom-icons li.current:nth-of-type(4) > *::before {
+  background-position: -60px -20px;
+}
+@media only screen and (min-width: 768px) {
+  .cd-breadcrumb, .cd-multi-steps {
+    padding: 0 1.2em;
+  }
+  .cd-breadcrumb li, .cd-multi-steps li {
+    margin: 1.2em 0;
+  }
+  .cd-breadcrumb li::after, .cd-multi-steps li::after {
+    margin: 0 1em;
+  }
+  .cd-breadcrumb li > *, .cd-multi-steps li > * {
+    font-size: 1.6rem;
+  }
+}
+/* --------------------------------
+
+
+Multi steps indicator
+
+-------------------------------- */
+@media only screen and (min-width: 768px) {
+  .cd-multi-steps {
+    /* reset style */
+    background-color: transparent;
+    padding: 0;
+    text-align: center;
+  }
+
+  .cd-multi-steps li {
+    position: relative;
+    float: none;
+    margin: 0.4em 50px 0.4em 0;
+  }
+  .cd-multi-steps li:last-of-type {
+    margin-right: 0;
+  }
+  .cd-multi-steps li::after {
+    /* this is the line connecting 2 adjacent items */
+    position: absolute;
+    content: '';
+    height: 4px;
+    background: #edeff0;
+    /* reset style */
+    margin: 0;
+  }
+  .cd-multi-steps li.visited::after {
+    background-color: #1a75ff;
+  }
+  .cd-multi-steps li > *, .cd-multi-steps li.current > * {
+    position: relative;
+    color: #2c3f4c;
+  }
+
+  .cd-multi-steps.custom-separator li::after {
+    /* reset style */
+    height: 4px;
+    background: #edeff0;
+  }
+
+  .cd-multi-steps.text-center li::after {
+    width: 100%;
+    top: 50%;
+    left: 100%;
+    -webkit-transform: translateY(-50%) translateX(-1px);
+    -moz-transform: translateY(-50%) translateX(-1px);
+    -ms-transform: translateY(-50%) translateX(-1px);
+    -o-transform: translateY(-50%) translateX(-1px);
+    transform: translateY(-50%) translateX(-1px);
+  }
+  .cd-multi-steps.text-center li > * {
+    z-index: 1;
+    padding: .6em 1em;
+    border-radius: .25em;
+    background-color: #edeff0;
+  }
+  .no-touch .cd-multi-steps.text-center a:hover {
+    background-color: #2c3f4c;
+  }
+  .cd-multi-steps.text-center li.current > *, .cd-multi-steps.text-center li.visited > * {
+    color: #ffffff;
+    background-color: #1a75ff;
+  }
+  .cd-multi-steps.text-center.custom-icons li.visited a::before {
+    /* change the custom icon for the visited item - check icon */
+    background-position: 0 -60px;
+  }
+
+  .cd-multi-steps.text-top li, .cd-multi-steps.text-bottom li {
+    width: 80px;
+    text-align: center;
+  }
+  .cd-multi-steps.text-top li::after, .cd-multi-steps.text-bottom li::after {
+    /* this is the line connecting 2 adjacent items */
+    position: absolute;
+    left: 50%;
+    /* 40px is the <li> right margin value */
+    width: calc(100% + 40px);
+  }
+  .cd-multi-steps.text-top li > *::before, .cd-multi-steps.text-bottom li > *::before {
+    /* this is the spot indicator */
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #edeff0;
+  }
+  .cd-multi-steps.text-top li.visited > *::before,
+  .cd-multi-steps.text-top li.current > *::before, .cd-multi-steps.text-bottom li.visited > *::before,
+  .cd-multi-steps.text-bottom li.current > *::before {
+    background-color: #1a75ff;
+  }
+  .no-touch .cd-multi-steps.text-top a:hover, .no-touch .cd-multi-steps.text-bottom a:hover {
+    color: #1a75ff;
+  }
+  .no-touch .cd-multi-steps.text-top a:hover::before, .no-touch .cd-multi-steps.text-bottom a:hover::before {
+    box-shadow: 0 0 0 3px rgba(150, 192, 61, 0.3);
+  }
+
+  .cd-multi-steps.text-top li::after {
+    /* this is the line connecting 2 adjacent items */
+    bottom: 4px;
+  }
+  .cd-multi-steps.text-top li > * {
+    padding-bottom: 20px;
+  }
+  .cd-multi-steps.text-top li > *::before {
+    /* this is the spot indicator */
+    bottom: 0;
+  }
+
+  .cd-multi-steps.text-bottom li::after {
+    /* this is the line connecting 2 adjacent items */
+    top: 3px;
+  }
+  .cd-multi-steps.text-bottom li > * {
+    padding-top: 20px;
+  }
+  .cd-multi-steps.text-bottom li > *::before {
+    /* this is the spot indicator */
+    top: 0;
+  }
+}
+/* --------------------------------
+
+Add a counter to the multi-steps indicator
+
+-------------------------------- */
+.cd-multi-steps.count li {
+  counter-increment: steps;
+}
+
+.cd-multi-steps.count li > *::before {
+  content: counter(steps) " - ";
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-multi-steps.text-top.count li > *::before,
+  .cd-multi-steps.text-bottom.count li > *::before {
+    /* this is the spot indicator */
+    content: counter(steps);
+    height: 26px;
+    width: 26px;
+    line-height: 26px;
+    font-size: 1.4rem;
+    color: #ffffff;
+  }
+
+  .cd-multi-steps.text-top.count li:not(.current) em::before,
+  .cd-multi-steps.text-bottom.count li:not(.current) em::before {
+    /* steps not visited yet - counter color */
+    color: #2c3f4c;
+  }
+
+  .cd-multi-steps.text-top.count li::after {
+    bottom: 11px;
+  }
+
+  .cd-multi-steps.text-top.count li > * {
+    padding-bottom: 34px;
+  }
+
+  .cd-multi-steps.text-bottom.count li::after {
+    top: 11px;
+  }
+
+  .cd-multi-steps.text-bottom.count li > * {
+    padding-top: 34px;
+  }
+}
+
+/* Breadcrumbs End */
+ol ol{
+  list-style-type: lower-alpha;
+}
+ol ol ol{
+  list-style-type: lower-roman;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container  mt-5 mb-5 ">
+<!-------------------------------------------------------------------- navigation --------------------------------------------------------------------------->
+
+<nav class="navbar bg-white ">
+
+  <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" 
+  data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"> Viewer Manual's Navigation
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="offcanvas offcanvas-end bg-white" tabindex="-1" id="offcanvasNavbar" 
+  aria-labelledby="offcanvasNavbarLabel">
+  <!------------------------------------------ Header ------------------------------------------------>
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Viewer Manual </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+    <!------------------------------------------ Body ------------------------------------------------>
+      
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="Home.html">Viewer's Home</a>
+          </li> -->
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Why ELS' Viewer?
+            </a>
+          
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Home.html#A1">Why ELS?</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li><a class="dropdown-item" href="Home.html#A1">Most Notable Features</a></li>
+              <li><a class="dropdown-item " href="New.html">What's New in V10?</a></li>
+
+            </ul>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link " href="Home.html#A2">Before You Start</a>
+          </li>
+
+                  <!------------------------------------------ Finding Your Way Through ELS ------------------------------------------------>
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="" 
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Finding Your Way Through ELS
+          </a>
+        
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Home.html#A3">How to find your way?</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Springs</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Elements</a></li>
+            <li><a class="dropdown-item" href="Home.html#A3">Frames</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li><a class="dropdown-item " href="WorkSpace.html">Viewer Workspace</a></li>
+            <ul style="list-style: none;">
+                <li ><a class="dropdown-item " href="WorkSpace.html#A1">&#10551;&nbsp Menus</a></li>
+                <li ><a class="dropdown-item " href="WorkSpace.html#A2">&#10551;&nbsp Browsers</a></li>
+                </ul>
+            <li><a class="dropdown-item " href="BasicFeatures.html">Basic Features</a></li>
+            <ul style="list-style: none;">
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Model Navigation</a></li>
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Display</a></li>
+              <li ><a class="dropdown-item " href="BasicFeatures.html">&#10551;&nbsp Markers</a></li>
+
+              </ul>
+            <li><a class="dropdown-item " href="ViewerSpecialities.html">Viewer's Specialties</a></li>
+            <ul style="list-style: none;">
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Advanced Options</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Charts</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Contours</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Straining Actions</a></li>
+              <li ><a class="dropdown-item " href="ViewerSpecialities.html">&#10551;&nbsp Eigen Analysis</a></li>
+              </ul>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="Home.html#A4" 
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Technical Support
+          </a>
+        
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Home.html#A4">Technical Support</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li><a class="dropdown-item " href="Home.html#A4">Service & Support</a></li>
+            <li><a class="dropdown-item " href="Home.html#A4">Contact Technical Support</a></li>
+            <li><a class="dropdown-item " href="Home.html#A4">Contact ASI</a></li>
+            
+
+
+
+    </div>
+  </div>
+
+
+
+</nav>
+
+
+
+
+
+
+<!---------------------------------------------------- Main Body ------------------------------------------------------------->
+
+  <h1>Contours</h1>
+
+<hr>
+<p>ELS Viewer V10 provides the user with an eye-friendly method of representing stresses/strains/displacemeents/blast pressure/OpenFOAM pressure for all elements of the problem throughout all frames of analysis. <strong>The Contours Feature</strong> provides ample customization options for the user to get a complete picture of what is occurring in the model.
+</p>
+
+
+
+         <!-------------------------------------------------------------Why ELS? ----------------------------------------------------------------------------------->
+         <hr>
+         <p>This command can be accessed through: </p>
+         <u>For Stress/Strain represntation</u>
+         <ol>
+          <li><strong>'Contours'</strong> menu > <strong>'Elements Stress/Strain Settings'</strong>.</li>
+          <li>The <strong>'Contour Settings'</strong><img src="images/viewer/contours/contour-settings-icon.png"> icon in the tool bar > <strong>Elements Stress/Strain Settings'</strong></li>
+         </ol>
+         <u>For Displacements representation:</u>
+         <ol>
+          <li><strong>'Contours'</strong> menu > <strong>'Elements Kinematics Settings'</strong>.</li>
+          <li>The <strong>'Contour Settings'</strong><img src="images/viewer/contours/contour-settings-icon.png"> icon in the tool bar > <strong>'Elements Kinematics Settings'</strong></li>
+         </ol>
+         <u>For Blast Pressure representation:</u>
+         <ol>
+          <li><strong>'Contours'</strong> menu > <strong>'Blast Pressure Settings'</strong>.</li>
+          <li>The <strong>'Contour Settings'</strong><img src="images/viewer/contours/contour-settings-icon.png"> icon in the tool bar > <strong>'Blast Pressure Settings'</strong></li>
+         </ol>
+         <u>For OpenFOAM Pressure representation:</u>
+         <ol>
+          <li><strong>'Contours'</strong> menu > <strong>'OpenFOAM Pressure Settings'</strong>.</li>
+          <li>The <strong>'Contour Settings'</strong><img src="images/viewer/contours/contour-settings-icon.png"> icon in the tool bar >  <strong>'OpenFOAM Pressure Settings'</strong></li>
+         </ol>
+         <p>Listed below is the description for the <strong>Elements Stress/Strain Settings</strong> available in the Contours Feature. The <strong>Elements Kinematics</strong>, <strong>Blast Pressure</strong>, and<strong> OpenFOAM Pressure </strong>dialogs contain the same options available in the first dialog.</p>
+         <hr>
+         <h2>Elements Stress/Strain Settings</h2>
+         <div class="container">
+          <img src="images/viewer/contours/elements-stress-strain-settings-dialog.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+          <ol>
+            <li>Specify the plot type: Stress or Strain and enable/disable special functions (<a href="https://en.wikipedia.org/wiki/Von_Mises_yield_criterion">Von Mises Yield Criterion</a>, <a href="https://en.wikipedia.org/wiki/Yield_surface#:~:text=are%20listed%20below.-,Tresca%20yield%20surface,-%5Bedit%5D">Tresca Yield Criterion</a>) as required </li>
+            <img src="images/viewer/contours/plot-type.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+            <li>Specify the plot direction:
+              <ol>
+                <li><strong>Along Global Axes</strong></li>
+                <img src="images/viewer/contours/plot-direction.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+                <li><strong>Along Custom Vector</strong>
+                <ol>
+                  <li>Specify direction ratios <strong>(V<sub>i</sub>,V<sub>j</sub>,V<sub>k</sub>)</strong>, where V<sub>i</sub>,V<sub>j</sub>,V<sub>k</sub> are the custom vector's direction cosines around X, Y, and Z respectively, or</li>
+                  <li>Specify two points on the custom vector, by typing their coordinates or picking in the viewer window</li>
+                  <img src="images/viewer/contours/plot-direction-custom-vector.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+                </ol>
+                </li>
+                <li>Along Custom Plane (click the 'Add' button to specify Plane Section Settings</li>
+                <ol>
+                  <li>Specify if the plane the plane is parallel to the X-Y plane, the X-Z plane or the Y-Z plane, and the offset distance from said plane, or</li>
+                  <li>Specify<strong> three points</strong> on the custom plane</li>
+                  <img src="images/viewer/contours/plane-section-settings.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+                </ol>
+              </ol>
+            </li>
+            <li>Specify the axes type:
+              <ol>
+                <li>Global
+                  <ol>
+                    <li><strong>Normal:</strong> In X-Axis, Y-Axis, or Z-Axis</li>
+                    <li><strong>Shear:</strong> In X-Y plane, X-Z plane, or Y-Z plane</li>
+                    <img src="images/viewer/contours/axes-type.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+                  </ol>
+                </li>
+                <li>Principal
+                  <ol>
+                    <li><strong>Normal</strong>: : In 1-Dir, in 2-Dir, or in 3-Dir</li>
+                    <li><strong>Shear</strong>: in 1-2 Plane, in 1-3 Plane, or in 2-3 Plane</li>
+                    <img src="images/viewer/contours/axes-type-principal.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>Specify the calculation method:
+              <ol>
+                <li>
+                  <strong>Averaged:</strong> offers a more continuous and smoother flow of contours from one element to the next by averaging the resultant stresses/strains of adjacent elements.
+                </li>
+                <li>
+                  <strong>Non averaged:</strong> exact stress/strain for each element independent of adjacent ones
+                  
+                </li>
+                <img src="images/viewer/contours/calculation-method.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-4">
+              </ol>
+            </li>
+            <li>
+              Specify whether to calculate contours based on:
+              <ol>
+                <li>All values</li>
+                <li>Minimum values (for the whole problem, all frames)</li>
+                <li>Maximum values (for the whole problem, all frames)</li>
+                
+              </ol>
+              <u><strong>Note:</strong></u> choosing Minimum or maximum values means that the values plotted for each frame will be obtained from different frames for the whole problem.
+            </li>
+            <li>Specify frames range for plotting the contours, or click the All Frames button to display contours for all frames till the current point the solver has reached in the analysis.<br>
+             <u><strong> Note</strong></u>: <strong>The Update Min. Max. Every Frame</strong> checkbox will calculate the minimum and maximum value for every frame and assign those to the lowest and highest colors on the contour spectrum, then plot all other values based on the minimum and maximum per frame.
+             <img src="images/viewer/contours/frames-range.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+            </li>
+            <li>Choose which elements will be included in the calculation: All Elements, Outer Surfaces, Outer Elements, or Selected Elements.</li>
+            <img src="images/viewer/contours/calculation-method-2.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-4">
+            <li>Enter the Min and Max. value for the contours, or press the Calculate Limits button to automatically calculate the values for the minimum and maximum values. </li>
+            <img src="images/viewer/contours/calculate-limits.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+            <li>Choose whether to represent the contours as regions or lines</li>
+            <img src="images/viewer/contours/plot-as.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+           <li>
+            Edit the Color Palette for the range of values as desired. (double click anywhere on the spectrum to edit the color)
+           </li>
+           <li>Click <strong>'Apply'</strong> and <strong>'OK'</strong> to close the Elements Stress/Strain Settings dialog box.</li>
+           <li>Play the video simulation to view contours for every frame.</li>
+           <img src="images/viewer/contours/contours-plotted.png" class="img-thumbnail img-fluid d-block mx-auto col-lg-6">
+          </ol>
+         </div>
+         
+
+
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var element = document.getElementById("myToast");
+        var myToast = new bootstrap.Toast(element, {
+            delay: 10000
+        });
+    });
+    </script>
+  <script>
+
+    var vid1 = document.getElementById(" Video"); 
+    function playVid1() { 
+        vid1.play();} 
+    function pauseVid1() { 
+        vid1.pause();} 
+
+
+    var vid2 = document.getElementById(" Video2");   
+    function playVid2() { 
+        vid2.play();} 
+    function pauseVid2() { 
+        vid2.pause();} 
+
+
+    
+    var vid3 = document.getElementById(" Video3"); 
+    function playVid3() { 
+        vid3.play();} 
+    function pauseVid3() { 
+        vid3.pause();} 
+
+
+    var vid4 = document.getElementById(" Video4"); 
+    function playVid4() { 
+        vid4.play(); } 
+    function pauseVid4() { 
+        vid4.pause();} 
+
+    var vid5 = document.getElementById(" Video5"); 
+    function playVid5() { 
+        vid5.play(); } 
+    function pauseVid5() { 
+        vid5.pause();} 
+
+    var vid6 = document.getElementById(" Video6"); 
+    function playVid6() { 
+        vid6.play(); } 
+    function pauseVid6() { 
+        vid6.pause();}  
+        
+        
+
+// ///////////////////////////////Next Section/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+   var vid21 = document.getElementById(" Video21"); 
+    function playVid21() { 
+        vid21.play(); } 
+    function pauseVid21() { 
+        vid21.pause();} 
+
+
+    var vid22 = document.getElementById(" Video22"); 
+          function playVid22() { 
+        vid22.play(); } 
+    function pauseVid22() { 
+        vid22.pause(); } 
+
+
+    
+    var vid23 = document.getElementById(" Video23"); 
+          function playVid23() { 
+        vid23.play(); } 
+    function pauseVid23() { 
+        vid23.pause(); } 
+
+
+    var vid24 = document.getElementById(" Video24"); 
+    function playVid24() { 
+        vid24.play(); } 
+    function pauseVid24() { 
+        vid24.pause(); } 
+
+
+    var vid25 = document.getElementById(" Video25"); 
+    function playVid25() { 
+        vid25.play(); } 
+    function pauseVid25() { 
+        vid25.pause();} 
+
+
+    var vid26 = document.getElementById(" Video26"); 
+          function playVid26() { 
+        vid26.play(); } 
+          function pauseVid26() { 
+        vid26.pause(); } 
+
+
+    var vid27 = document.getElementById(" Video27"); 
+          function playVid27() { 
+        vid27.play();} 
+          function pauseVid27() { 
+        vid27.pause();} 
+
+
+
+    var vid31 = document.getElementById(" Video31"); 
+    function playVid31() { 
+        vid31.play(); } 
+    function pauseVid31() { 
+        vid31.pause();} 
+
+
+    var vid32 = document.getElementById(" Video32"); 
+    function playVid32() { 
+        vid32.play(); } 
+    function pauseVid32() { 
+        vid32.pause(); } 
+
+
+    
+    var vid33 = document.getElementById(" Video33"); 
+    function playVid33() { 
+        vid33.play(); } 
+    function pauseVid33() { 
+        vid33.pause(); } 
+
+        var vid221 = document.getElementById(" Video221"); 
+    function playVid221() { 
+        vid221.play(); } 
+    function pauseVid221() { 
+        vid221.pause(); } 
+
+        var vid222 = document.getElementById(" Video222"); 
+    function playVid222() { 
+        vid222.play(); } 
+    function pauseVid222() { 
+        vid222.pause(); } 
+
+        var vid223 = document.getElementById(" Video223"); 
+    function playVid223() { 
+        vid223.play(); } 
+    function pauseVid223() { 
+        vid223.pause(); } 
+
+        var vid224 = document.getElementById(" Video224"); 
+    function playVid224() { 
+        vid224.play(); } 
+    function pauseVid224() { 
+        vid224.pause(); } 
+
+
+// Get the modals
+var modalA = document.getElementById('exampleModal1');
+var modal = document.getElementById('exampleModal2');
+var modal1 = document.getElementById('exampleModal3');
+var modal2 = document.getElementById('exampleModal4');
+var modal3 = document.getElementById('exampleModal5');
+var modal4 = document.getElementById('exampleModal6');
+
+
+var modalA2 = document.getElementById('exampleModal21');
+var modal21 = document.getElementById('exampleModal22');
+var modal22 = document.getElementById('exampleModal23');
+var modal23 = document.getElementById('exampleModal24');
+
+
+
+var modalA3 = document.getElementById('exampleModal31');
+var modal31 = document.getElementById('exampleModal32');
+var modal32 = document.getElementById('exampleModal33');
+
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+//alert(event.target)
+  if (event.target == modal) {
+    vid2.pause();
+  } 
+if(event.target == modalA) {
+  vid1.pause();     
+   }
+if(event.target == modal1) {
+  vid3.pause();     
+}
+if(event.target == modal2) {
+  vid4.pause();     
+}
+if(event.target == modal3) {
+  vid5.pause();     
+}
+if(event.target == modal4) {
+  vid6.pause();     
+}
+
+
+if (event.target == modalA2) {
+    vid21.pause();
+  } 
+if(event.target == modal21) {
+  vid22.pause();     
+}
+if(event.target == modal22) {
+  vid23.pause();     
+}    
+if(event.target == modal23) {
+  vid24.pause();     
+} 
+
+
+if (event.target == modalA3) {
+    vid31.pause();
+  } 
+if(event.target == modal31) {
+  vid32.pause();     
+}
+if(event.target == modal32) {
+  vid33.pause();     
+}    
+
+
+
+}
+
+
+    
+</script>
+
+
+
+</body>
+</html>
